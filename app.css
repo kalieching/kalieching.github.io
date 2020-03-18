@@ -36,5 +36,5 @@
 /* Color for current/active link */
 .topnav a.active {
   background-color: #bccad4;
-  color: white;
+  color: black;
 }
