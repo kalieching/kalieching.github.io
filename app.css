@@ -9,32 +9,3 @@
   text-align: center;
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
-
-/* Black background for navigation */
-.topnav {
-  background-color: #222426;
-  overflow: hidden;
-}
-
-/* Links styled within navigation bar */
-.topnav a {
-  float: center;
-  color: #EFEFEF;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
-
-/* Cover of links on hover */
-.topnav a:hover {
-  background-color: #EFEFEF;
-  color: black;
-}
-
-/* Color for current/active link */
-.topnav a.active {
-  background-color: #bccad4;
-  color: black;
-}
