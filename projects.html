@@ -5,6 +5,7 @@
   <title>Kalie Ching</title>
   <meta charset="UTF-8">
   <link href="app.css" rel="stylesheet" type="text/css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
@@ -13,14 +14,13 @@
     <h1>Projects</h1>
   </div>
 
-  <div class="topnav">
-    <a href="#home">Home</a>
-    <a class="active" href="#projects">Projects</a>
-    <a href="#art">Art</a>
-    <a href="#photo">Photography</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <div id="nav-placeholder"></div>
+
+  <script>
+  $(function(){
+    $("#nav-placeholder").load("nav.html");
+  });
+  </script>
 
   <p>Paragraph</p>
 
