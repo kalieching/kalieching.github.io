@@ -12,8 +12,8 @@
 
 /* Black background for navigation */
 #nav {
-  background-color: #222426;
   overflow: hidden;
+  background-color: #222426;
 }
 
 /* Links styled within navigation bar */
@@ -23,7 +23,7 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
