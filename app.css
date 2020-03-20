@@ -11,13 +11,13 @@
 }
 
 /* Black background for navigation */
-.nav {
+#nav {
   background-color: #222426;
   overflow: hidden;
 }
 
 /* Links styled within navigation bar */
-.nav a {
+#nav a {
   float: center;
   color: #EFEFEF;
   text-align: center;
@@ -28,13 +28,13 @@
 }
 
 /* Cover of links on hover */
-.nav a:hover {
+#nav a:hover {
   background-color: #EFEFEF;
   color: black;
 }
 
 /* Color for current/active link */
-.nav a.active {
+#nav a.active {
   background-color: #bccad4;
   color: black;
 }
