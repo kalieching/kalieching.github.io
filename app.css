@@ -17,7 +17,7 @@
 }
 
 /* Links styled within navigation bar */
-.nav-placeholder a {
+.topnav a {
   float: center;
   color: #EFEFEF;
   text-align: center;
@@ -28,13 +28,13 @@
 }
 
 /* Cover of links on hover */
-.nav-placeholder a:hover {
+.topnav a:hover {
   background-color: #EFEFEF;
   color: black;
 }
 
 /* Color for current/active link */
-.nav-placeholder a.active {
+.topnav a.active {
   background-color: #bccad4;
   color: black;
 }
