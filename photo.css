@@ -5,6 +5,10 @@
 /* black background shade: #000000 */
 /* white background shade: #FFFFFF */
 
+$(function(){
+  $("#nav").load("nav.html");
+});
+
 * {
   box-sizing: border-box;
 }
