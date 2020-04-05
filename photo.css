@@ -5,6 +5,40 @@
 /* black background shade: #000000 */
 /* white background shade: #FFFFFF */
 
+.header {
+  text-align: center;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+/* Black background for navigation */
+#nav {
+  overflow: hidden;
+  background-color: #222426;
+}
+
+/* Links styled within navigation bar */
+#nav a {
+  float: left;
+  color: #EFEFEF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+/* Cover of links on hover */
+#nav a:hover {
+  background-color: #EFEFEF;
+  color: black;
+}
+
+/* Color for current/active link */
+#nav a.active {
+  background-color: #bccad4;
+  color: black;
+}
+
 * {
   box-sizing: border-box;
 }
