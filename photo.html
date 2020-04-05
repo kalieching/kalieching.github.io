@@ -20,22 +20,22 @@
   <!--Navigation Bar Begins-->
   <div id="nav"></div>
 
-  <script>
+
+
+  <script src="js/photo.js">
     $(function(){
       $("#nav").load("nav.html");
     });
   </script>
-
-  <script src="js/photo.js"></script>
 
   <!--Navigation Bar Ends-->
 
   <h2>PORTFOLIO</h2>
 <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('portraits')"> Portraits</button>
   <button class="btn" onclick="filterSelection('nature')"> Nature</button>
-  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
-  <button class="btn" onclick="filterSelection('people')"> People</button>
+  <button class="btn" onclick="filterSelection('city')"> City</button>
 </div>
 
 <!-- Portfolio Gallery Grid -->
