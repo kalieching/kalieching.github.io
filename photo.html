@@ -4,8 +4,11 @@
 <head>
   <title>Kalie Ching</title>
   <meta charset="UTF-8">
-  <link href="app.css" rel="stylesheet" type="text/css">
+  <link href="photo.css" rel="stylesheet" type="text/css">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <style>
+
+  </style>
 </head>
 
 <body>
@@ -22,9 +25,68 @@
       $("#nav").load("nav.html");
     });
   </script>
+
+  <script src="js/photo.js"></script>
+
   <!--Navigation Bar Ends-->
 
-  <p>Paragraph</p>
+  <h2>PORTFOLIO</h2>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('nature')"> Nature</button>
+  <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+  <button class="btn" onclick="filterSelection('people')"> People</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column portraits">
+    <div class="content">
+      <img src="/w3images/mountains.jpg" alt="Mountains" style="width:100%">
+      <h4>Close-up Portraits</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column portraits">
+    <div class="content">
+      <img src="/w3images/lights.jpg" alt="Lights" style="width:100%">
+      <h4>Long-shot Portraits</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column nature">
+    <div class="content">
+      <img src="/w3images/cars1.jpg" alt="Car" style="width:100%">
+      <h4>Landscapes</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column nature">
+    <div class="content">
+      <img src="/w3images/cars2.jpg" alt="Car" style="width:100%">
+      <h4>Plants and Animals</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+
+  <div class="column city">
+    <div class="content">
+      <img src="/w3images/people1.jpg" alt="People" style="width:100%">
+      <h4>Structures</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+  <div class="column city">
+    <div class="content">
+      <img src="/w3images/people2.jpg" alt="People" style="width:100%">
+      <h4>Indoors</h4>
+      <p>Lorem ipsum dolor..</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
 
 </body>
 </html>
