@@ -38,3 +38,9 @@
   background-color: #bccad4;
   color: black;
 }
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
