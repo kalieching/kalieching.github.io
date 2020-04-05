@@ -1,3 +1,7 @@
+$(function(){
+  $("#nav").load("nav.html");
+});
+
 filterSelection("all")
 function filterSelection(c) {
   var x, i;
