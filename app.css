@@ -10,10 +10,10 @@
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
-/* Black background for navigation */
+/* white background for navigation */
 #nav {
   overflow: hidden;
-  background-color: #EFEFEF;
+  background-color: #f1f1f1;
 }
 
 /* Links styled within navigation bar */
