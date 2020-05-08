@@ -13,13 +13,13 @@
 /* Black background for navigation */
 #nav {
   overflow: hidden;
-  background-color: #222426;
+  background-color: #EFEFEF;
 }
 
 /* Links styled within navigation bar */
 #nav a {
   float: left;
-  color: #EFEFEF;
+  color: #222426;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -29,15 +29,11 @@
 
 /* Cover of links on hover */
 #nav a:hover {
-  background-color: #EFEFEF;
+  background-color: #FFFFFF;
   color: black;
 }
 
-/* Color for current/active link */
-#nav a.active {
-  background-color: #bccad4;
-  color: black;
-}
+
 
 body {
   background-color: #f1f1f1;
