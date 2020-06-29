@@ -61,6 +61,8 @@ header #title {
 
 header #title h1 {
   margin: 0;
+  color: black;
+  text-decoration: none;
 }
 
 header nav {
