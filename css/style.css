@@ -195,8 +195,7 @@ footer {
 
 footer a {
   text-decoration: none;
-  color: black;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #FFD0AE 50%);
+  color: purple;
 }
 
 footer img {
