@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="An introduction to Kalie Ching.">
+    <meta name="keywords" content="kalie, ching, resume, design, computer science, programming, coding">
+    <meta name="author" content="Kalie Ching">
+    <title>Portfolio | Kalie Ching</title>
+    <link rel="stylesheet" href="./css/portfolio.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="title">
+          <h1>Kalie Ching</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="#photo">Photography</a></li>
+            <li><a href="#art">Art</a></li>
+            <li><a href="#about">About Me</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <script src="js/portfolio.js"></script>
+
+    <a name="photo"></a>
+    <section id="photo">
+      <div class="body-container">
+
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn" onclick="filterSelection('portraits')"> Portraits</button>
+          <button class="btn" onclick="filterSelection('nature')"> Nature</button>
+          <button class="btn" onclick="filterSelection('city')"> City</button>
+        </div>
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+          <div class="column portraits">
+            <div class="content">
+              <img src="./img/photo/PortraitIrisFlowers.jpg" alt="Mountains" style="width:100%">
+              <h4>Portraits Pt. 1</h4>
+              <p>Lorem ipsum dolor..</p>
+            </div>
+          </div>
+          <div class="column portraits">
+            <div class="content">
+              <img src="./img/photo/PortraitRedOnRed.jpg" alt="Lights" style="width:100%">
+              <h4>Portraits Pt. 2</h4>
+              <p>Lorem ipsum dolor..</p>
+            </div>
+          </div>
+
+          <div class="column nature">
+            <div class="content">
+              <img src="./img/photo/LandscapeDreaming.JPG" alt="Car" style="width:100%">
+              <h4>Landscapes</h4>
+              <p>Lorem ipsum dolor..</p>
+            </div>
+          </div>
+          <div class="column nature">
+            <div class="content">
+              <img src="./img/photo/FlowersPurple2.jpg" alt="Car" style="width:100%">
+              <h4>Plants and Animals</h4>
+              <p>Lorem ipsum dolor..</p>
+            </div>
+          </div>
+
+          <div class="column city">
+            <div class="content">
+              <img src="./img/photo/CityBridge.jpg" alt="People" style="width:100%">
+              <h4>Structures</h4>
+              <p>Lorem ipsum dolor..</p>
+            </div>
+          </div>
+          <div class="column city">
+            <div class="content">
+              <img src="./img/photo/LandscapeSkyTram.jpg" alt="People" style="width:100%">
+              <h4>Indoors</h4>
+              <p>Lorem ipsum dolor..</p>
+            </div>
+          </div>
+        <!-- END GRID -->
+        </div>
+      </div>
+    </section>
+
+    <a name="art"></a>
+    <section id="art">
+      <div class="body-container">
+
+      </div>
+    </section>
+
+    <a name="about"></a>
+    <section id="about">
+      <div class="body-container">
+
+      </div>
+    </section>
+
+    <footer>
+      <p>Copyright &copy; 2020 Kalie Ching</p>
+    </footer>
+  </body>
+</html>

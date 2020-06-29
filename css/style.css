@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* Global **/
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.body-container {
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  padding: none;
+  margin: none;
+  text-align: center;
+}
+
+/* Header **/
+header {
+  background: #ebceeb;
+  color: #000000;
+  padding-top: 20px;
+  min-height: 60px;
+  border-bottom: #111111;
+  padding-bottom: 10px;
+}
+
+header a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+header #title {
+  float: left;
+}
+
+header #title h1 {
+  margin: 0;
+}
+
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+
+header .current a {
+  color: #85038a;
+  background-color: rgba(86, 3, 138, 0.1);
+  font-weight: bold;
+}
+
+header a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+}
+
+/* About **/
+#about {
+  padding-top: 20px;
+  min-height: 350px;
+  background: #dfceeb;
+  padding-bottom: 20px;
+}
+
+#about p {
+  font-size: 18px;
+}
+
+#about img {
+  width: 250px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#about #text {
+  float: left;
+  width: 60%;
+}
+
+#about #image {
+  float: right;
+  width: 30%;
+}
+
+#about a {
+  color: #000000;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
+  text-decoration: none;
+}
+
+/* Academics **/
+
+#academics {
+  padding-top: 25px;
+  min-height: 200px;
+  background: #ceceeb;
+  padding-bottom: 25px;
+}
+
+#academics p {
+  font-size: 18px;
+}
+
+#academics a {
+  color: #000000;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
+  text-decoration: none;
+}
+
+#academics .highlight {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #ffedae 50%);
+}
+
+/* Projects **/
+
+#projects {
+  padding-top: 10px;
+  min-height: 200px;
+  background: #ced6eb;
+  padding-bottom: 25px;
+}
+
+#projects h4 {
+  padding: none;
+  margin: none;
+  text-align: center;
+}
+
+#projects .highlight {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #FFD0AE 50%);
+}
+
+#projects .role {
+  padding: none;
+  margin: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
+}
+
+#projects p {
+  font-size: 18px;
+}
+
+#projects a {
+  color: #000000;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
+  text-decoration: none;
+}
+
+/* Skills **/
+
+#skills {
+  padding-top: 10px;
+  min-height: 200px;
+  background: #cedaeb;
+  padding-bottom: 25px;
+}
+
+#skills p {
+  font-size: 17px;
+}
+
+/* Footer **/
+footer {
+  padding-top: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #FFD0AE 50%);
+}
+
+footer img {
+  width: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Media Queries **/
+@media(max-width: 1200px) {
+  header #title,
+  header nav,
+  header nav li {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  header {
+    padding-bottom: 15px;
+  }
+}
+
+@media(max-width: 1000px) {
+  #about #text {
+    padding: none;
+    float: none;
+    width: 100%;
+  }
+
+  #about #image {
+    float: none;
+    padding: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  #about img {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #academics span {
+    float: none;
+  }
+}
