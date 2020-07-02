@@ -1,11 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Karla', sans-serif;
   font-size: 17px;
   padding: 0;
   margin: 0;
   background-color: #f4f4f4;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b8b8;
 }
 
 /* Global **/
@@ -104,8 +129,8 @@ header a:hover {
 /* About **/
 #about {
   padding-top: 20px;
-  min-height: 350px;
-  background: #dfceeb;
+  min-height: 300px;
+  background: linear-gradient(#ebceeb, #dfceeb);
   padding-bottom: 20px;
 }
 
@@ -121,7 +146,7 @@ header a:hover {
 
 #about #text {
   float: left;
-  width: 60%;
+  width: 65%;
 }
 
 #about #image {
@@ -140,7 +165,7 @@ header a:hover {
 #academics {
   padding-top: 25px;
   min-height: 200px;
-  background: #ceceeb;
+  background: linear-gradient(#dfceeb, #ceceeb);
   padding-bottom: 25px;
 }
 
@@ -163,7 +188,7 @@ header a:hover {
 #projects {
   padding-top: 10px;
   min-height: 200px;
-  background: #ced6eb;
+  background: linear-gradient(#ceceeb, #cee1eb);
   padding-bottom: 25px;
 }
 
@@ -200,7 +225,7 @@ header a:hover {
 #skills {
   padding-top: 10px;
   min-height: 200px;
-  background: #cedaeb;
+  background: linear-gradient(#cee1eb, #ceebe2);
   padding-bottom: 25px;
 }
 
