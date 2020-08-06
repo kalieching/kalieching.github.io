@@ -6,9 +6,13 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
   if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("myBtn").style.display = "block";
+    $(document.getElementById("myBtn")).fadeIn();
+    $(document.getElementById("mySidenav")).fadeIn();
+
   } else {
     document.getElementById("myBtn").style.display = "none";
+    $(document.getElementById("myBtn")).fadeOut();
+    $(document.getElementById("mySidenav")).fadeOut();
   }
 }
 
