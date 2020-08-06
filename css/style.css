@@ -268,7 +268,7 @@ a.lightbox img {
   padding-left: 15vw;
   margin-right: -15vw;
   padding-right: 15vw;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.7);
   -webkit-transition: opacity .5s ease-in-out;
   -moz-transition: opacity .5s ease-in-out;
   -o-transition: opacity .5s ease-in-out;
@@ -452,6 +452,18 @@ footer img {
   }
 
   #SIPMentorsImg {
+    width: 85%;
+  }
+
+  #teamPhotoFTCImg {
+    width: 85%;
+  }
+
+  #robotFTCImg {
+    width: 70%;
+  }
+
+  #codingFTCImg {
     width: 85%;
   }
 }
