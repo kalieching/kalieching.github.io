@@ -541,7 +541,7 @@ footer img {
     text-transform: uppercase;
   }
 
-  #mySidenav a {
+  #mySidenav {
     display: none;
   }
 }
