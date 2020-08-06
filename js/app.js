@@ -1,14 +1,14 @@
 //Get the button
-var mybutton = document.getElementById("myBtn");
+let mybutton = document.getElementById("myBtn");
 
 //When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("myBtn").style.display = "block";
   } else {
-    mybutton.style.display = "none";
+    document.getElementById("myBtn").style.display = "none";
   }
 }
 
