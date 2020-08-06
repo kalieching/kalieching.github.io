@@ -93,8 +93,25 @@ header {
   padding-bottom: 10px;
 }
 
-header a {
+/* unvisited link */
+header a:link {
+  color: black;
   text-decoration: none;
+}
+
+/* visited link */
+header a:visited {
+  color: black;
+}
+
+/* mouse over link */
+header a:hover {
+  color: black;
+}
+
+/* selected link */
+header a:active {
+  color: #85038a;
 }
 
 header #nav {
@@ -113,6 +130,7 @@ header #title {
 }
 
 header #title h1 {
+  padding-top: 3px;
   color: black;
   margin: 0;
 }
