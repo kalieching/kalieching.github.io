@@ -55,6 +55,7 @@ h2 {
   padding: none;
   margin: none;
   text-align: center;
+  text-transform: uppercase;
 }
 
 /* Button **/
@@ -442,6 +443,7 @@ footer img {
     font-size: 1.2em;
     margin-top: 1em;
     margin-bottom: 1em;
+    text-transform: uppercase;
   }
 
   a.lightbox img {
@@ -505,5 +507,6 @@ footer img {
     font-size: 1.1em;
     margin-top: 1em;
     margin-bottom: 1em;
+    text-transform: uppercase;
   }
 }
