@@ -93,7 +93,7 @@ header {
   padding-bottom: 10px;
 }
 
-header a {
+header #nav {
   color: #000000;
   text-decoration: none;
   text-transform: uppercase;
