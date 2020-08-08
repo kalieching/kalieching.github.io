@@ -203,25 +203,54 @@ header #nav:hover {
 }
 
 #about img {
-  width: 250px;
+  width: 240px;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
 }
 
 #about #text {
   float: left;
-  width: 65%;
+  width: 73%;
+}
+
+#about #text img {
+  width: 20px;
+  margin: none;
+  padding-top: none;
+  padding-bottom: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #about #image {
   float: right;
-  width: 30%;
+  text-align: right;
+  width: 25%;
+  margin: none;
+  padding: none;
+}
+
+#about #image #socials {
+  text-align: center;
+  float: center;
+}
+
+#about #image #socials img {
+  text-align: center;
+  width: 20px;
+  margin: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: center;
 }
 
 #about a {
-  color: #000000;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
+  color: black;
   text-decoration: none;
+}
+
+#about #text #link {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
 }
 
 /* Academics **/
@@ -427,7 +456,7 @@ footer img {
 }
 
 /* Media Queries **/
-@media(max-width: 1200px) {
+@media(max-width: 1100px) {
   header #title,
   header nav,
   header nav li {
@@ -441,7 +470,7 @@ footer img {
   }
 }
 
-@media(max-width: 1100px) {
+@media(max-width: 1300px) {
   #about #text {
     padding: none;
     float: none;
@@ -458,6 +487,7 @@ footer img {
   #about img {
     padding-top: 20px;
     padding-bottom: 20px;
+
   }
 
   #academics span {
