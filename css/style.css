@@ -308,7 +308,6 @@ header #nav:hover {
 }
 
 #projects #link {
-  color: #000000;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
 }
 
@@ -325,17 +324,13 @@ header #nav:hover {
 
 /* Projects Visited Link **/
 #projects a:visited {
+  text-decoration: none;
   color: black;
 }
 
-/* Projects Mouse Over Link **/
+/* Projects Mouse Over Link: text becomes bold and purple **/
 #projects a:hover {
-  color: #85038a;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Projects Selected Link **/
-#projects a:active {
+  font-weight: bold;
   color: #85038a;
 }
 
@@ -568,6 +563,10 @@ footer img {
   }
 
   #SIPParticipantsImg {
+    width: 90%;
+  }
+
+  #CATSImg {
     width: 90%;
   }
 }
