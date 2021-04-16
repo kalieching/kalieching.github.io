@@ -457,14 +457,14 @@ a.lightbox-close:after {
 
 /* Just For Fun **/
 
-#just_for_fun {
+#fun {
   padding-top: 10px;
   min-height: 200px;
   background: linear-gradient(#ceebe2, #cceacc);
   padding-bottom: 25px;
 }
 
-#just_for_fun p {
+#fun p {
   font-size: 17px;
 }
 
