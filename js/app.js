@@ -5,7 +5,7 @@ let mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 100) {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
     $(document.getElementById("myBtn")).fadeIn();
     $(document.getElementById("mySidenav")).fadeIn();
 

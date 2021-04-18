@@ -86,7 +86,7 @@ h2 {
 header {
   width: 100%;
   height: 60px;
-  background: #ebceeb;
+  background: #ceceeb;
   color: #000000;
   padding-top: 20px;
   min-height: 60px;
@@ -172,29 +172,29 @@ header #nav:hover {
 /* The about link: 20px from the top with a green background */
 #aboutSide {
   top: 20px;
-  background-color: #cc459f;
+  background-color: #765cbc;
 }
 
 #academicsSide {
   top: 70px;
-  background-color: #8b48d4; /* Blue */
+  background-color: #4a80b5; /* Blue */
 }
 
 #experienceSide {
   top: 120px;
-  background-color: #4984d6; /* Red */
+  background-color: #44d5d5; /* Red */
 }
 
 #skillsSide {
   top: 170px;
-  background-color: #43ccbe; /* Light Black */
+  background-color: #5ad899; /* Light Black */
 }
 
 /* About **/
 #about {
   padding-top: 20px;
   min-height: 300px;
-  background: linear-gradient(#ebceeb, #dfceeb);
+  background: linear-gradient(#ceceeb, #ccdbea);
   padding-bottom: 20px;
 }
 
@@ -258,7 +258,7 @@ header #nav:hover {
 #academics {
   padding-top: 25px;
   min-height: 200px;
-  background: linear-gradient(#dfceeb, #ceceeb);
+  background: linear-gradient(#ccdbea, #cce3ea);
   padding-bottom: 25px;
 }
 
@@ -281,7 +281,7 @@ header #nav:hover {
 #projects {
   padding-top: 10px;
   min-height: 200px;
-  background: linear-gradient(#ceceeb, #cee1eb);
+  background: linear-gradient(#cce3ea, #cceaea);
   padding-bottom: 25px;
 }
 
@@ -447,7 +447,7 @@ a.lightbox-close:after {
 #skills {
   padding-top: 10px;
   min-height: 200px;
-  background: linear-gradient(#cee1eb, #ceebe2);
+  background: linear-gradient(#cceaea, #cceadb);
   padding-bottom: 25px;
 }
 
@@ -460,7 +460,7 @@ a.lightbox-close:after {
 #fun {
   padding-top: 10px;
   min-height: 200px;
-  background: linear-gradient(#ceebe2, #cceacc);
+  background: linear-gradient(#cceadb, #cceacc);
   padding-bottom: 25px;
 }
 
