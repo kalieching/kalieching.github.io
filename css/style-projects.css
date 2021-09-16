@@ -152,136 +152,12 @@ header #nav:hover {
   font-weight: bold;
 }
 
-/* Style the links inside the sidenav */
-#mySidenav a {
-  position: fixed; /* Position them relative to the browser window */
-  left: -115px; /* Position them outside of the screen */
-  transition: 0.3s; /* Add transition on hover */
-  padding: 10px; /* 15px padding */
-  width: 123px; /* Set a specific width */
-  text-decoration: none; /* Remove underline */
-  font-size: 20px; /* Increase font size */
-  color: white; /* White text color */
-  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
-}
-
-#mySidenav a:hover {
-  left: 0; /* On mouse-over, make the elements appear as they should */
-}
-
-/* The about link: 20px from the top with a green background */
-#aboutSide {
-  top: 20px;
-  background-color: #765cbc;
-}
-
-#academicsSide {
-  top: 70px;
-  background-color: #4a80b5; /* Blue */
-}
-
-#experienceSide {
-  top: 120px;
-  background-color: #44d5d5; /* Red */
-}
-
-#skillsSide {
-  top: 170px;
-  background-color: #5ad899; /* Light Black */
-}
-
-/* About **/
-#about {
-  padding-top: 20px;
-  min-height: 300px;
-  background: linear-gradient(#ceceeb, #ccdbea);
-  padding-bottom: 20px;
-}
-
-#about p {
-  font-size: 18px;
-}
-
-#about img {
-  width: 240px;
-  padding-top: 20px;
-  padding-bottom: 0px;
-}
-
-#about #text {
-  float: left;
-  width: 73%;
-}
-
-#about #text img {
-  width: 20px;
-  margin: none;
-  padding-top: none;
-  padding-bottom: none;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#about #image {
-  float: right;
-  text-align: right;
-  width: 25%;
-  margin: none;
-  padding: none;
-}
-
-#about #image #socials {
-  text-align: center;
-  float: center;
-}
-
-#about #image #socials img {
-  text-align: center;
-  width: 20px;
-  margin: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  float: center;
-}
-
-#about a {
-  color: black;
-  text-decoration: none;
-}
-
-#about #text #link {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
-}
-
-/* Academics **/
-
-#academics {
-  padding-top: 25px;
-  min-height: 200px;
-  background: linear-gradient(#ccdbea, #cce3ea);
-  padding-bottom: 25px;
-}
-
-#academics p {
-  font-size: 18px;
-}
-
-#academics a {
-  color: #000000;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0.6) 30%);
-  text-decoration: none;
-}
-
-#academics .highlight {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #ffedae 50%);
-}
-
-/* Projects - Style */
+/** Projects */
 
 #projects {
   padding-top: 10px;
   min-height: 200px;
-  background: linear-gradient(#cce3ea, #cceaea);
+  background: linear-gradient(#cce3ea, #ccebe5);
   padding-bottom: 25px;
 }
 
@@ -440,32 +316,6 @@ a.lightbox-close:after {
   color: #ffffff;
   background: rgba(0, 0, 0, 0.8);
   text-align: center;
-}
-
-/* Skills **/
-
-#skills {
-  padding-top: 10px;
-  min-height: 200px;
-  background: linear-gradient(#cceaea, #cceadb);
-  padding-bottom: 25px;
-}
-
-#skills p {
-  font-size: 17px;
-}
-
-/* Just For Fun **/
-
-#fun {
-  padding-top: 10px;
-  min-height: 200px;
-  background: linear-gradient(#cceadb, #cceacc);
-  padding-bottom: 25px;
-}
-
-#fun p {
-  font-size: 17px;
 }
 
 /* Footer **/
