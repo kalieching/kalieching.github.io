@@ -103,3 +103,8 @@ a{
         padding-top: 2rem;
     }
 }
+
+.profile-image {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+ }
