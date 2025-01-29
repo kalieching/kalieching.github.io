@@ -88,6 +88,11 @@ a{
     padding-left: 10px;
 }
 
+.profile-image {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+}
+
 /* media queres */
 @media(max-width:780px){
     .grid-2{
@@ -103,8 +108,3 @@ a{
         padding-top: 2rem;
     }
 }
-
-.profile-image {
-    width: 100px; /* Adjust size as needed */
-    height: auto;
- }
