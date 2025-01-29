@@ -88,7 +88,7 @@ a{
     padding-left: 10px;
 }
 
-.profile-image {
+img {
     width: 100px; /* Adjust size as needed */
     height: auto;
 }
