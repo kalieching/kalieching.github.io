@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Kalie Ching</title>
 </head>
@@ -18,32 +20,63 @@
             <a href="https://github.com/kalieching"><i class="fab fa-github"></i></a>
         </div>
         <div class="section-2">
-            <h2>👋</h2>
-            <p>Hi everyone! My name is Kalie Ching (she/her/hers), and I am an applied scientist at 
-              <a id="link" href="https://theaiinstitute.com/">The AI Institute</a> working at the 
-              intersection of AI, computer vision, and robotics.</p>
-            <p>Previously, I graduated from UC Berkeley with a major in computer science and a minor in data science. I am wrapping 
-              up undergraduate research tasks at the <a id="link" href="https://msc.berkeley.edu/">
-              Mechanical Systems Control Laboratory</a> and previously interned with The AI Institute 
-              for the fall of 2023. During my time at Berkeley, I taught <a id="link" href="https://eecs16b.org/">
-              EECS 16B</a> as a Lab TA/tutor for four semesters. In the past, I interned at 
-              <a id="link" href="https://getcruise.com/">Cruise</a> as an Autonomy Systems Engineer 
-              Intern, Microsoft as a Software Engineer Intern on the
-              <a id="link" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/hyperscale-architecture?view=azuresql">
-              Azure Data</a> team, and NASA as part of the <a id="link" href="https://www.nasa.gov/astrobee"> 
-              Astrobee Facility Project</a> at the Ames Research Center!</p>
+            <details class="portfolio-container" open>
+              <summary>about ✩₊˚.⋆☾⋆⁺₊✧</summary>
+              <div class="dropdown-container">
+                <p></p>
+                <p>Hi everyone! My name is Kalie Ching (she/her/hers), and I am an applied scientist at 
+                  <a id="link" href="https://theaiinstitute.com/">The AI Institute</a> working at the 
+                  intersection of AI, computer vision, and robotics.</p>
+                <p>Previously, I graduated from UC Berkeley with a major in computer science and a minor in data science. I am wrapping 
+                  up undergraduate research tasks at the <a id="link" href="https://msc.berkeley.edu/">
+                  Mechanical Systems Control Laboratory</a> and previously interned with The AI Institute 
+                  for the fall of 2023. During my time at Berkeley, I taught <a id="link" href="https://eecs16b.org/">
+                  EECS 16B</a> as a Lab TA/tutor for four semesters. In the past, I interned at 
+                  <a id="link" href="https://getcruise.com/">Cruise</a> as an Autonomy Systems Engineer 
+                  Intern, Microsoft as a Software Engineer Intern on the
+                  <a id="link" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/hyperscale-architecture?view=azuresql">
+                  Azure Data</a> team, and NASA as part of the <a id="link" href="https://www.nasa.gov/astrobee"> 
+                  Astrobee Facility Project</a> at the Ames Research Center!</p>
 
-            <p>I'm broadly interested in autonomous intelligent systems. Particularly, I’m very curious about machine 
-              intelligence from both a cognitive science and HCI lens.</p>
+                <p>I'm broadly interested in autonomous intelligent systems. Particularly, I’m very curious about machine 
+                  intelligence from both a cognitive science and HCI lens.</p>
 
-            <p>When I'm not working, I love staying active (tennis, soccer, ice skating, gymming) and exploring 
-              fashion (sewing, designing, thrifting, styling).</p>
+                <p>When I'm not working, I love staying active (tennis, soccer, ice skating, gymming) and exploring 
+                  fashion (sewing, designing, thrifting, styling).</p>
 
-            <p>If you'd like to chat 📧: kaliefaith (at) gmail.com</p>
+                <p>If you'd like to chat 📧: kaliefaith (at) gmail.com</p>
+              </div>
+            </details>
 
-            <a id="link" href="https://github.com/giotsere/minimalist-portfolio" target="_blank" style="font-size: small">Website Template</a>
+            <details class="portfolio-container">
+              <summary>art ✐ᝰ.</summary>
+              <p></p>
+              <div class="art-grid">
 
+              </div>
+            
+              <!-- Art Popup -->
+              <div id="art-popup" class="popup">
+                <span class="art-close-btn">&times;</span>
+                <img class="popup-art" src="" alt="Full-size image">
+              </div>
+            </details>
+            
+            <details class="portfolio-container">
+              <summary>photo [◉¯] .𖥔 ݁ ˖</summary>
+              <p></p>
+              <div class="photo-grid">
+
+              </div>
+            
+              <!-- Photo Popup -->
+              <div id="photo-popup" class="popup">
+                <span class="photo-close-btn">&times;</span>
+                <img class="popup-image" src="" alt="Full-size image">
+              </div>
+            </details>
         </div>
     </div>
+    <script src="js/app.js"></script>
 </body>
 </html>
