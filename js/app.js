@@ -16,7 +16,7 @@ const art = [
   'img/art/woman.jpg',
   'img/art/woman_oil.jpg',
   'img/art/woman_charcoal.jpg',
-  'img/art/digital.jpg',
+  'img/art/digital.JPG',
   'img/art/still_life_bear.jpg',
   'img/art/landscape.jpg',
   'img/art/still_life_fruit.jpg',
