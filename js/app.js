@@ -13,27 +13,27 @@ detailsElements.forEach((details) => {
 });
 
 const art = [
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/woman.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/woman_oil.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/woman_charcoal.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/digital.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/still_life_bear.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/landscape.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/still_life_fruit.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/fish_oil.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/art/og.jpg',
+  'img/art/woman.jpg',
+  'img/art/woman_oil.jpg',
+  'img/art/woman_charcoal.jpg',
+  'img/art/digital.jpg',
+  'img/art/still_life_bear.jpg',
+  'img/art/landscape.jpg',
+  'img/art/still_life_fruit.jpg',
+  'img/art/fish_oil.jpg',
+  'img/art/og.jpg',
 ];
 
 const photos = [
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/flower_portrait.JPG',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/purple_flowers.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/red_stairs_2.JPG',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/lily.jpeg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/roof_pose.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/gondola.jpg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/red_stairs_1.JPG',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/maple.jpeg',
-  '/Users/kalieching/Documents/Programming/kalieching.github.io/img/photography/tahoe.JPG',
+  'img/photography/flower_portrait.JPG',
+  'img/photography/purple_flowers.jpg',
+  'img/photography/red_stairs_2.JPG',
+  'img/photography/lily.jpeg',
+  'img/photography/roof_pose.jpg',
+  'img/photography/gondola.jpg',
+  'img/photography/red_stairs_1.JPG',
+  'img/photography/maple.jpeg',
+  'img/photography/tahoe.JPG',
 ];
 
 const artGrid = document.querySelector('.art-grid');
