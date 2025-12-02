@@ -2,7 +2,7 @@
 
 .grid-2{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr 3fr;
 }
 
 body{
@@ -225,9 +225,20 @@ details summary:hover::after {
     color: #000;
 }
   
+details .dropdown-content {
+    overflow: hidden;
+    display: block;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
 details .dropdown-container {
     padding: 10px;
     background-color: transparent;
+}
+
+details .art-grid,
+details .photo-grid {
+    padding: 10px;
 }
 
 details summary::after {
@@ -237,4 +248,191 @@ details summary::after {
     font-size: 12px;
     color: #666;
     transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.blog-post {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.blog-post:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.blog-post h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.blog-post p {
+    margin-bottom: 0;
+    color: #7A7C80;
+}
+
+.blog-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    border: 1.5px solid;
+}
+
+.tag-animation {
+    color: #FF6B9D;
+    background-color: rgba(255, 107, 157, 0.15);
+    border-color: #FF6B9D;
+}
+
+.tag-fashion {
+    color: #C77DFF;
+    background-color: rgba(199, 125, 255, 0.15);
+    border-color: #C77DFF;
+}
+
+.tag-music {
+    color: #4ECDC4;
+    background-color: rgba(78, 205, 196, 0.15);
+    border-color: #4ECDC4;
+}
+
+.tag-sport {
+    color: #45B7D1;
+    background-color: rgba(69, 183, 209, 0.15);
+    border-color: #45B7D1;
+}
+
+.tag-robotics {
+    color: #FFA07A;
+    background-color: rgba(255, 160, 122, 0.15);
+    border-color: #FFA07A;
+}
+
+.tag-mlai {
+    color: #98D8C8;
+    background-color: rgba(152, 216, 200, 0.15);
+    border-color: #98D8C8;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #c2c2c2;
+}
+
+body.dark-mode h2,
+body.dark-mode .black {
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #ffffff;
+}
+
+body.dark-mode .section-2 a {
+    color: #ffffff;
+}
+
+body.dark-mode .section-2 a:hover {
+    color: rgb(123, 153, 101);
+}
+
+body.dark-mode .section-1 a:hover {
+    color: rgb(123, 153, 101);
+}
+
+body.dark-mode .portfolio-container h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode details summary {
+    color: #e0e0e0;
+}
+
+body.dark-mode details summary::after {
+    color: #b0b0b0;
+}
+
+body.dark-mode details[open] summary::after {
+    color: #e0e0e0;
+}
+
+body.dark-mode details summary:hover {
+    color: #ffffff;
+}
+
+body.dark-mode details summary:hover::after {
+    color: #ffffff;
+}
+
+body.dark-mode .blog-post {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .blog-post:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .blog-post h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .blog-post p {
+    color: #d0d0d0;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: #3a3a3a;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .popup {
+    background-color: rgba(0, 0, 0, 0.95);
 }
