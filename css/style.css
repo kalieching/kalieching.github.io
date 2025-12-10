@@ -104,6 +104,16 @@ img {
     }
 }
 
+.section-1 h2 .chinese-name {
+    display: inline;
+}
+
+@media(max-width:1100px){
+    .section-1 h2 .chinese-name {
+        display: block;
+    }
+}
+
 .portfolio-container {
 margin: 0 auto;
 padding: 10px;
