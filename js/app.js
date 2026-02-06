@@ -119,27 +119,27 @@ const art = [
   'img/art/og.jpg',
 ];
 
-// const photos = [
-//   'img/photography/flower_portrait.JPG',
-//   'img/photography/purple_flowers.jpg',
-//   'img/photography/red_stairs_2.JPG',
-//   'img/photography/lily.jpeg',
-//   'img/photography/roof_pose.jpg',
-//   'img/photography/gondola.jpg',
-//   'img/photography/red_stairs_1.JPG',
-//   'img/photography/maple.jpeg',
-//   'img/photography/tahoe.JPG',
-// ];
+const photos = [
+  'img/design/jk_logo.png',
+  'img/design/jk_header.png',
+  // 'img/photography/red_stairs_2.JPG',
+  // 'img/photography/lily.jpeg',
+  // 'img/photography/roof_pose.jpg',
+  // 'img/photography/gondola.jpg',
+  // 'img/photography/red_stairs_1.JPG',
+  // 'img/photography/maple.jpeg',
+  // 'img/photography/tahoe.JPG',
+];
 
 const artGrid = document.querySelector('.art-grid');
 const artPopup = document.getElementById('art-popup');
 const popupArt = document.querySelector('.popup-art');
 const artCloseBtn = document.querySelector('.art-close-btn');
 
-// const photoGrid = document.querySelector('.photo-grid');
-// const photoPopup = document.getElementById('photo-popup');
-// const popupImage = document.querySelector('.popup-image');
-// const photoCloseBtn = document.querySelector('.photo-close-btn');
+const photoGrid = document.querySelector('.photo-grid');
+const photoPopup = document.getElementById('photo-popup');
+const popupImage = document.querySelector('.popup-image');
+const photoCloseBtn = document.querySelector('.photo-close-btn');
 
 function setupGrid(grid, popup, popupImage, closeBtn, items) {
   if (grid) {
@@ -171,7 +171,7 @@ function setupGrid(grid, popup, popupImage, closeBtn, items) {
 }
 
 setupGrid(artGrid, artPopup, popupArt, artCloseBtn, art);
-// setupGrid(photoGrid, photoPopup, popupImage, photoCloseBtn, photos);
+setupGrid(photoGrid, photoPopup, popupImage, photoCloseBtn, photos);
 
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
