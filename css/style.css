@@ -41,6 +41,13 @@ img {
     height: auto;
 }
 
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* ============================================
    SECTION 1 (Profile)
    ============================================ */
@@ -198,7 +205,7 @@ details .dropdown-content {
    ============================================ */
 .blog-post {
     background-color: #fff;
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -212,9 +219,9 @@ details .dropdown-content {
 
 .blog-post h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #333;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .blog-post h3 a {
@@ -235,7 +242,7 @@ details .dropdown-content {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
 }
 
 .tag {

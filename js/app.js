@@ -118,7 +118,6 @@ function renderBlogPosts() {
     blogPostDiv.innerHTML = `
       <h3>${post.date} ⋆ <a href="blog/${post.id}.html">${post.title}</a></h3>
       ${tagsHTML}
-      <p>${post.excerpt}</p>
     `;
     
     container.appendChild(blogPostDiv);

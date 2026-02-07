@@ -9,7 +9,7 @@ const blogPosts = [
         <p>Today, I built my own DIY LLM (without the help of LLMs). I followed "Let's build GPT" from Andrej Karpathy.</p>
         <p><a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank">Watch the video here</a></p>
       `,
-      tags: ['mlai', 'robotics']
+      tags: ['ml+ai', 'robotics']
     },
     {
       id: 'create-more-than-consume',
@@ -63,14 +63,4 @@ const blogPosts = [
       `,
       tags: []
     },
-    {
-      id: 'witness-to-my-life',
-      title: 'being a witness to my own life',
-      date: '12/2/2025',
-      excerpt: 'documenting action and creation, not just ideation and contemplation.',
-      content: `
-        <p>documenting action and creation, not just ideation and contemplation.</p>
-      `,
-      tags: []
-    }
   ];
