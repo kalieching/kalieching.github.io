@@ -1,3 +1,6 @@
+// ============================================
+// ACCORDION FUNCTIONALITY
+// ============================================
 const detailsElements = document.querySelectorAll('.portfolio-container');
 
 detailsElements.forEach((details) => {
@@ -19,7 +22,6 @@ detailsElements.forEach((details) => {
     }
     
     if (details.open) {
-      // User wants to close - prevent default and animate out
       e.preventDefault();
       isAnimating = true;
       
@@ -28,11 +30,8 @@ detailsElements.forEach((details) => {
         content.style.maxHeight = currentHeight + 'px';
         content.style.opacity = '1';
         content.style.transform = 'translateY(0)';
-        
-        // Force reflow
         void content.offsetHeight;
         
-        // Animate out
         requestAnimationFrame(() => {
           content.style.maxHeight = '0';
           content.style.opacity = '0';
@@ -54,17 +53,12 @@ detailsElements.forEach((details) => {
     if (isAnimating) return;
     
     if (details.open) {
-      // Opening animation
       if (content) {
-        // Set initial state
         content.style.maxHeight = '0';
         content.style.opacity = '0';
         content.style.transform = 'translateY(-10px)';
-        
-        // Force reflow
         void content.offsetHeight;
         
-        // Animate in
         requestAnimationFrame(() => {
           const targetHeight = content.scrollHeight;
           content.style.maxHeight = targetHeight + 'px';
@@ -76,7 +70,6 @@ detailsElements.forEach((details) => {
       // Close other details with animation
       detailsElements.forEach((otherDetails) => {
         if (otherDetails !== details && otherDetails.open) {
-          const otherSummary = otherDetails.querySelector('summary');
           const otherContent = otherDetails.querySelector('.dropdown-content');
           
           if (otherContent) {
@@ -84,11 +77,8 @@ detailsElements.forEach((details) => {
             otherContent.style.maxHeight = currentHeight + 'px';
             otherContent.style.opacity = '1';
             otherContent.style.transform = 'translateY(0)';
-            
-            // Force reflow
             void otherContent.offsetHeight;
             
-            // Animate out
             requestAnimationFrame(() => {
               otherContent.style.maxHeight = '0';
               otherContent.style.opacity = '0';
@@ -107,6 +97,42 @@ detailsElements.forEach((details) => {
   });
 });
 
+// ============================================
+// BLOG POST RENDERING
+// ============================================
+function renderBlogPosts() {
+  const container = document.getElementById('blog-posts-container');
+  if (!container) return;
+  
+  blogPosts.forEach(post => {
+    const blogPostDiv = document.createElement('div');
+    blogPostDiv.className = 'blog-post';
+    
+    let tagsHTML = '';
+    if (post.tags && post.tags.length > 0) {
+      tagsHTML = '<div class="blog-tags">' + 
+        post.tags.map(tag => `<span class="tag tag-${tag}">${tag}</span>`).join('') + 
+        '</div>';
+    }
+    
+    blogPostDiv.innerHTML = `
+      <h3>${post.date} ⋆ <a href="blog/${post.id}.html">${post.title}</a></h3>
+      ${tagsHTML}
+      <p>${post.excerpt}</p>
+    `;
+    
+    container.appendChild(blogPostDiv);
+  });
+}
+
+// Call on page load
+if (document.getElementById('blog-posts-container')) {
+  renderBlogPosts();
+}
+
+// ============================================
+// ART GALLERY
+// ============================================
 const art = [
   'img/art/woman.jpg',
   'img/art/woman_oil.jpg',
@@ -119,45 +145,26 @@ const art = [
   'img/art/og.jpg',
 ];
 
-const photos = [
-  'img/design/jk_logo.png',
-  'img/design/jk_header.png',
-  // 'img/photography/red_stairs_2.JPG',
-  // 'img/photography/lily.jpeg',
-  // 'img/photography/roof_pose.jpg',
-  // 'img/photography/gondola.jpg',
-  // 'img/photography/red_stairs_1.JPG',
-  // 'img/photography/maple.jpeg',
-  // 'img/photography/tahoe.JPG',
-];
+function setupGallery(gridSelector, popupSelector, popupImgSelector, closeBtnSelector, items) {
+  const grid = document.querySelector(gridSelector);
+  const popup = document.querySelector(popupSelector);
+  const popupImg = document.querySelector(popupImgSelector);
+  const closeBtn = document.querySelector(closeBtnSelector);
+  
+  if (!grid || !popup || !popupImg || !closeBtn) return;
+  
+  items.forEach((itemPath) => {
+    const img = document.createElement('img');
+    img.src = itemPath;
+    img.alt = 'Gallery image';
+    img.classList.add('grid-item');
+    grid.appendChild(img);
 
-const artGrid = document.querySelector('.art-grid');
-const artPopup = document.getElementById('art-popup');
-const popupArt = document.querySelector('.popup-art');
-const artCloseBtn = document.querySelector('.art-close-btn');
-
-const photoGrid = document.querySelector('.photo-grid');
-const photoPopup = document.getElementById('photo-popup');
-const popupImage = document.querySelector('.popup-image');
-const photoCloseBtn = document.querySelector('.photo-close-btn');
-
-function setupGrid(grid, popup, popupImage, closeBtn, items) {
-  if (grid) {
-    items.forEach((itemPath) => {
-      const img = document.createElement('img');
-      img.src = itemPath;
-      img.alt = 'Image';
-      img.classList.add('grid-item');
-      grid.appendChild(img);
-
-      img.addEventListener('click', () => {
-        popupImage.src = itemPath;
-        popup.style.display = 'flex';
-      });
+    img.addEventListener('click', () => {
+      popupImg.src = itemPath;
+      popup.style.display = 'flex';
     });
-  } else {
-    console.error('Grid container not found!');
-  }
+  });
 
   closeBtn.addEventListener('click', () => {
     popup.style.display = 'none';
@@ -170,14 +177,14 @@ function setupGrid(grid, popup, popupImage, closeBtn, items) {
   });
 }
 
-setupGrid(artGrid, artPopup, popupArt, artCloseBtn, art);
-setupGrid(photoGrid, photoPopup, popupImage, photoCloseBtn, photos);
+setupGallery('.art-grid', '#art-popup', '.popup-art', '.art-close-btn', art);
 
-// Dark Mode Toggle
+// ============================================
+// DARK MODE TOGGLE
+// ============================================
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
-// Check for saved theme preference or default to dark mode
 const currentTheme = localStorage.getItem('theme') || 'dark';
 if (currentTheme === 'dark') {
   body.classList.add('dark-mode');
@@ -186,7 +193,6 @@ if (currentTheme === 'dark') {
   darkModeToggle.textContent = '🌙';
 }
 
-// Toggle dark mode
 darkModeToggle.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
   

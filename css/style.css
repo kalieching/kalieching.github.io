@@ -1,87 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.grid-2{
+/* ============================================
+   GRID LAYOUT
+   ============================================ */
+.grid-2 {
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
 
-body{
+@media(max-width:780px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+body {
     margin: 0;
     padding: 20px;
     font-family: 'Lato', sans-serif;
     background-color: white;
     color: #7A7C80;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h2,.black{
+h2 {
     color: #000;
 }
 
-a{
+a {
     color: #7A7C80;
     text-decoration: none;
-}
-
-.section-1{
-    padding-top: 40vh;
-    text-align: center;
-}
-
-.section-1 p{
-    font-size: 1.1rem;
-    padding-bottom: 10px;
-    margin:0;
-}
-
-.section-1 h2{
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-}
-
-.section-1 a{
-    font-size: 1.5rem;
-    padding: 10px;
-}
-
-.section-2{
-    padding-top: 10vh;
-    width: 90%;
-}
-
-.section-2 h2{
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-}
-
-.section-2 p{
-    font-size: 1rem;
-    padding-bottom: 10px;
-    margin:0;
-}
-
-.section-2 a {
-    font-size: 1rem;
-    padding-left: 0;
-    width: 100px;
-    background: transparent; 
-    color: black; 
-  }
-  
-  .section-2 a:hover {
-    color: rgb(123, 153, 101); 
-    background-color: transparent; 
-  }
-
-.section-1 a:hover{
-    color: rgb(123, 153, 101); 
-    background-color: transparent;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.white:hover{
-    position: relative;
-    padding-left: 10px;
+    transition: color 0.3s ease;
 }
 
 img {
@@ -89,121 +41,108 @@ img {
     height: auto;
 }
 
-@media(max-width:780px){
-    .grid-2{
-        grid-template-columns: 1fr;
-    }
-    .section-1{
-        padding:0;
-        padding-top: 5rem;
-    }
-    .section-2{
-        padding: 0;
-        padding-left: 1.5rem;
-        padding-top: 2rem;
-    }
+/* ============================================
+   SECTION 1 (Profile)
+   ============================================ */
+.section-1 {
+    padding-top: 40vh;
+    text-align: center;
+}
+
+.section-1 p {
+    font-size: 1.1rem;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.section-1 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
 }
 
 .section-1 h2 .chinese-name {
     display: inline;
 }
 
-@media(max-width:1100px){
+.section-1 a {
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.section-1 a:hover {
+    color: rgb(123, 153, 101);
+    cursor: pointer;
+}
+
+@media(max-width:780px) {
+    .section-1 {
+        padding: 0;
+        padding-top: 5rem;
+    }
+}
+
+@media(max-width:1100px) {
     .section-1 h2 .chinese-name {
         display: block;
     }
 }
 
+/* ============================================
+   SECTION 2 (Content)
+   ============================================ */
+.section-2 {
+    padding-top: 10vh;
+    width: 90%;
+}
+
+.section-2 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.section-2 p {
+    font-size: 1rem;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.section-2 a {
+    font-size: 1rem;
+    padding-left: 0;
+    background: transparent;
+    color: black;
+}
+
+.section-2 a:hover {
+    color: rgb(123, 153, 101);
+}
+
+@media(max-width:780px) {
+    .section-2 {
+        padding: 0;
+        padding-left: 1.5rem;
+        padding-top: 2rem;
+    }
+}
+
+/* ============================================
+   PORTFOLIO CONTAINERS (Accordions)
+   ============================================ */
 .portfolio-container {
-margin: 0 auto;
-padding: 10px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .portfolio-container h2 {
-text-align: center;
-margin-bottom: 0px;
-font-size: 24px;
-color: #333;
-}
-
-.dropdown-container {
-margin-bottom: 0px;
-text-align: left;
-}
-  
-.photo-grid,
-.art-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 10px;
-}
-
-.photo-grid img,
-.art-grid img {
-  width: 100%;
-  height: 190px;
-  border-radius: 8px;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.photo-grid img:hover,
-.art-grid img:hover {
-  transform: scale(1.05);
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-art,
-.popup-image {
-  max-width: 90%;
-  max-height: 90%;
-  width: auto;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-}
-
-.art-close-btn,
-.photo-close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.art-close-btn:hover,
-.photo-close-btn:hover {
-  color: #ccc;
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 24px;
+    color: #333;
 }
 
 details summary {
     list-style: none;
     cursor: pointer;
-}
-  
-details summary::-webkit-details-marker {
-    display: none;
-}
-  
-details summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -214,41 +153,9 @@ details summary {
     color: #333;
     transition: color 0.3s ease;
 }
-  
-details summary::after {
-    content: "▼";
-    font-size: 12px;
-    color: #666;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-  
-details[open] summary::after {
-    transform: rotate(180deg);
-    color: #333;
-}
-  
-details summary:hover {
-    color: #000;
-}
-  
-details summary:hover::after {
-    color: #000;
-}
-  
-details .dropdown-content {
-    overflow: hidden;
-    display: block;
-    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
-}
 
-details .dropdown-container {
-    padding: 10px;
-    background-color: transparent;
-}
-
-details .art-grid,
-details .photo-grid {
-    padding: 10px;
+details summary::-webkit-details-marker {
+    display: none;
 }
 
 details summary::after {
@@ -260,6 +167,35 @@ details summary::after {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+details[open] summary::after {
+    transform: rotate(180deg);
+    color: #333;
+}
+
+details summary:hover {
+    color: #000;
+}
+
+details summary:hover::after {
+    color: #000;
+}
+
+details .dropdown-content {
+    overflow: hidden;
+    display: block;
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.dropdown-container {
+    margin-bottom: 0px;
+    text-align: left;
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* ============================================
+   BLOG POSTS
+   ============================================ */
 .blog-post {
     background-color: #fff;
     padding: 20px;
@@ -279,6 +215,15 @@ details summary::after {
     margin-bottom: 10px;
     color: #333;
     font-size: 1.3rem;
+}
+
+.blog-post h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.blog-post h3 a:hover {
+    color: rgb(123, 153, 101);
 }
 
 .blog-post p {
@@ -339,7 +284,69 @@ details summary::after {
     border-color: #98D8C8;
 }
 
-/* Dark Mode Toggle Button */
+/* ============================================
+   ART GALLERY
+   ============================================ */
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.art-grid img {
+    width: 100%;
+    height: 190px;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.art-grid img:hover {
+    transform: scale(1.05);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-art {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.art-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.art-close-btn:hover {
+    color: #ccc;
+}
+
+/* ============================================
+   DARK MODE TOGGLE
+   ============================================ */
 .dark-mode-toggle {
     position: fixed;
     bottom: 30px;
@@ -364,14 +371,15 @@ details summary::after {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Dark Mode Styles */
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
 body.dark-mode {
     background-color: #1a1a1a;
     color: #c2c2c2;
 }
 
-body.dark-mode h2,
-body.dark-mode .black {
+body.dark-mode h2 {
     color: #ffffff;
 }
 
@@ -379,14 +387,7 @@ body.dark-mode a {
     color: #ffffff;
 }
 
-body.dark-mode .section-2 a {
-    color: #ffffff;
-}
-
-body.dark-mode .section-2 a:hover {
-    color: rgb(123, 153, 101);
-}
-
+body.dark-mode .section-2 a:hover,
 body.dark-mode .section-1 a:hover {
     color: rgb(123, 153, 101);
 }
@@ -407,10 +408,7 @@ body.dark-mode details[open] summary::after {
     color: #e0e0e0;
 }
 
-body.dark-mode details summary:hover {
-    color: #ffffff;
-}
-
+body.dark-mode details summary:hover,
 body.dark-mode details summary:hover::after {
     color: #ffffff;
 }
@@ -424,8 +422,13 @@ body.dark-mode .blog-post:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode .blog-post h3 {
+body.dark-mode .blog-post h3,
+body.dark-mode .blog-post h3 a {
     color: #ffffff;
+}
+
+body.dark-mode .blog-post h3 a:hover {
+    color: rgb(123, 153, 101);
 }
 
 body.dark-mode .blog-post p {
