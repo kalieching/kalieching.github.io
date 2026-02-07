@@ -90,8 +90,8 @@ body.dark-mode .post-meta .separator {
 
 /* Post Content */
 .post-content {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.7;
     color: #333;
 }
 
@@ -196,14 +196,25 @@ body.dark-mode .post-content pre {
 
 /* Comments Section */
 .comments-section {
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 15px;
 }
 
 .comments-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
     color: #000;
+}
+
+/* Make Giscus comments more compact */
+#giscus-container {
+    font-size: 0.9rem;
+}
+
+#giscus-container iframe {
+    transform: scale(0.9);
+    transform-origin: top left;
+    width: 111.11% !important;
 }
 
 body.dark-mode .comments-section h2 {
