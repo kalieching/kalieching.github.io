@@ -9,7 +9,7 @@ const blogPosts = [
         <p>Today, I built my own DIY LLM (without the help of LLMs). I followed "Let's build GPT" from Andrej Karpathy.</p>
         <p><a href="https://www.youtube.com/watch?v=kCc8FmEb1nY" target="_blank">Watch the video here</a></p>
       `,
-      tags: ['ml+ai', 'robotics']
+      tags: ['ai']
     },
     {
       id: 'create-more-than-consume',
@@ -61,6 +61,6 @@ const blogPosts = [
         truly makes me happy. I hope that by the end of this year, I have a page full of my creations - 
         tangible, real artifacts, not just imaginations in my head.</p>
       `,
-      tags: []
+      tags: ['personal']
     },
   ];

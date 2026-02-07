@@ -285,10 +285,16 @@ details .dropdown-content {
     border-color: #FFA07A;
 }
 
-.tag-mlai {
+.tag-ai {
     color: #98D8C8;
     background-color: rgba(152, 216, 200, 0.15);
     border-color: #98D8C8;
+}
+
+.tag-personal {
+    color: #d598d8;
+    background-color: rgba(152, 216, 200, 0.15);
+    border-color: #d698d8;
 }
 
 /* ============================================
