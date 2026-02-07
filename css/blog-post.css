@@ -5,7 +5,7 @@
    .blog-post-page {
     max-width: 900px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 50px;
 }
 
 /* Navigation */
@@ -208,11 +208,11 @@ body.dark-mode .post-content pre {
 
 /* Make Giscus comments more compact */
 #giscus-container {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
 }
 
 #giscus-container iframe {
-    transform: scale(0.9);
+    transform: scale(0.6);
     transform-origin: top left;
     width: 111.11% !important;
 }
@@ -224,7 +224,7 @@ body.dark-mode .comments-section h2 {
 /* Responsive Design */
 @media(max-width: 780px) {
     .blog-post-page {
-        padding: 15px;
+        padding: 50px;
     }
     
     .post-header h1 {
