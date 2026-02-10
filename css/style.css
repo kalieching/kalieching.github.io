@@ -67,9 +67,9 @@ img {
     margin-bottom: 10px;
 }
 
-.section-1 h2 .chinese-name {
+/* .section-1 h2 .chinese-name {
     display: inline;
-}
+} */
 
 .section-1 a {
     font-size: 1.5rem;
@@ -88,11 +88,11 @@ img {
     }
 }
 
-@media(max-width:1100px) {
+/* @media(max-width:1100px) {
     .section-1 h2 .chinese-name {
         display: block;
     }
-}
+} */
 
 /* ============================================
    SECTION 2 (Content)
