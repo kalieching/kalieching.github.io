@@ -6,11 +6,9 @@ title: Kalie Ching
   <aside class="sidebar">
     <img src="/img/ProfilePic.jpeg" alt="Kalie Ching" class="profile-image">
     <h1>Kalie Ching</h1>
-    <p class="tagline">ai & robotics researcher</p>
     <nav>
       <a href="#about">about</a>
       <a href="#projects">projects</a>
-      <a href="/blog">writing</a>
       <a href="#contact">contact</a>
     </nav>
     <div class="social-links">
@@ -23,9 +21,9 @@ title: Kalie Ching
   <main>
     <section id="about">
       <h2>about</h2>
-      <p>Hi! I'm Kalie Ching (she/her), a research engineer at the <a href="https://rai-inst.com/">Robotics and AI Institute (RAI)</a> working on conditioning for robot policy learning. I previously built 3D perception systems for robots that learn skills from human videos.</p>
-      <p>I graduated from UC Berkeley with a major in computer science and a minor in data science. I taught <a href="https://eecs16b.org/staff.html">EECS 16B</a> as a Lab TA for four semesters, and have interned at <a href="https://www.gm.com/innovation/autonomous-driving/">Cruise (now GM)</a>, Microsoft Azure, and <a href="https://www.nasa.gov/astrobee">NASA's Astrobee Facility Project</a>.</p>
-      <p>Outside of work: tennis, winter sports, gym, and character & fashion design.</p>
+      <p>Hi! I'm Kalie Ching (she/her), a research engineer at the <a href="https://rai-inst.com/">Robotics and AI Institute (RAI)</a> working on robot policy learning for manipulation tasks. I have worked on building 3D perception systems for robots that learn skills from human videos.</p>
+      <p>I graduated from UC Berkeley with a major in computer science and a minor in data science. I taught <a href="https://eecs16b.org/staff.html">EECS 16B</a> as a Lab TA for four semesters, and have interned at <a href="https://www.gm.com/innovation/autonomous-driving">Cruise (now GM)</a>, Microsoft Azure, and <a href="https://www.nasa.gov/astrobee">NASA's Astrobee Facility Project</a>.</p>
+      <p>Outside of work, I am interested in character & fashion design.</p>
     </section>
 
     <section id="projects">
@@ -33,17 +31,21 @@ title: Kalie Ching
       <div class="project-list">
 
         <div class="project">
-          <div class="project-header">
-            <span class="project-title">GenForce</span>
-            <a href="https://github.com/kalieching/genforce" class="project-link">GitHub ↗</a>
-          </div>
-          <p>Force-augmented robotics dataset generation system. Produces contact forces and actuator torques alongside standard proprioception for training manipulation policies, stored in an RLDS-compatible TFRecord pipeline.</p>
-          <div class="project-tags">
-            <span>MuJoCo</span>
-            <span>JAX</span>
+          <div class="project-body">
+            <img src="/img/genforce.png" alt="GenForce visualization" class="project-image">
+            <div class="project-details">
+              <div class="project-header">
+                <span class="project-title">GenForce</span>
+                <a href="https://github.com/kalieching/genforce" class="project-link">GitHub ↗</a>
+              </div>
+              <p>Force-augmented robotics dataset generation system. Produces contact forces and actuator torques alongside standard proprioception for training manipulation policies, stored in an RLDS-compatible TFRecord pipeline.</p>
+              <div class="project-tags">
+                <span>MuJoCo</span>
+                <span>JAX</span>
+              </div>
+            </div>
           </div>
         </div>
-
 
       </div>
     </section>
