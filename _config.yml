@@ -1,0 +1,7 @@
+title: Kalie Ching
+description: ai & robotics researcher
+url: https://kalieching.github.io
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown

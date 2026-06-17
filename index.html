@@ -1,90 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ai & robotics researcher, designer & artist"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎐</text></svg>">
-    
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X75Y13S6F"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-9X75Y13S6F');
-    </script>
-    
-    <title>Kalie Ching</title>
-</head>
-<body class="dark-mode">
-    <div class="grid-2">
-        <div class="section-1">
-            <img src="img/ProfilePic.jpeg" alt="Me!" class="profile-image">
-            <h2>Kalie Ching</h2>
-            <a href="https://www.instagram.com/bykeggs/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/kalie-ching/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/kalieching" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="section-2">
-            <details class="portfolio-container" open>
-                <summary>about ✩₊˚.⋆☾⋆⁺₊✧</summary>
-                <div class="dropdown-content">
-                    <div class="dropdown-container">
-                        <p></p>
-                        <p>Hi everyone! My name is Kalie Ching (she/her/hers), and I am a research engineer at the
-                            <a id="link" href="https://rai-inst.com/">Robotics and AI Institute (RAI)</a> working 
-                            on conditioning for robot policy learning. I previously built 3D perception systems for robots 
-                            that learn skills from human videos.</p>
-                        <p>Prior to this role, I graduated from UC Berkeley with a major in computer science and a minor in 
-                            data science. I am independently wrapping up research tasks originating from an undergraduate 
-                            research position at the <a id="link" href="https://msc.berkeley.edu/">
-                            Mechanical Systems Control Laboratory</a> and previously interned at RAI 
-                            during the fall of 2023. During my time at Berkeley, I taught <a id="link" href="https://eecs16b.org/staff.html">
-                            EECS 16B</a> as a Lab TA/tutor for four semesters. In the past, I interned at 
-                            <a id="link" href="https://www.gm.com/innovation/autonomous-driving/">Cruise (now GM)</a> as an Autonomy Systems Engineer 
-                            Intern, Microsoft as a Software Engineer Intern on the
-                            <a id="link" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/hyperscale-architecture?view=azuresql">
-                            Azure Data</a> team, and NASA as part of the <a id="link" href="https://www.nasa.gov/astrobee"> 
-                            Astrobee Facility Project</a> at the Ames Research Center!</p>
-                        <p>I studied fine arts for 13+ years at a local <a id="link" href="https://www.sjaart.com/">art studio</a>. 
-                            When I'm not working, I love staying active (tennis, winter sports, gymming) and exploring 
-                            character and fashion design.</p>
-                        <p>If you'd like to chat 📧: kaliefaith (at) gmail.com</p>
-                    </div>
-                </div>
-            </details>
-
-            <!-- <details class="portfolio-container">
-                <summary>projects + writing ✍︎</summary>
-                <div class="dropdown-content">
-                    <div class="dropdown-container">
-                        <p></p>
-                        <div id="blog-posts-container"> -->
-                            <!-- Blog posts will be dynamically loaded here -->
-                        <!-- </div>
-                    </div>
-                </div>
-            </details> -->
-
-            <details class="portfolio-container">
-                <summary>art ✐ᝰ.</summary>
-                <div class="dropdown-content">
-                    <p></p>
-                    <div class="art-grid"></div>
-                </div>
-                <div id="art-popup" class="popup">
-                    <span class="art-close-btn">&times;</span>
-                    <img class="popup-art" src="" alt="Full-size image">
-                </div>
-            </details>
-        </div>
+---
+layout: default
+title: Kalie Ching
+---
+<div class="grid-2">
+  <aside class="sidebar">
+    <img src="/img/ProfilePic.jpeg" alt="Kalie Ching" class="profile-image">
+    <h1>Kalie Ching</h1>
+    <p class="tagline">ai & robotics researcher</p>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#projects">projects</a>
+      <a href="/blog">writing</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <div class="social-links">
+      <a href="https://github.com/kalieching" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/kalie-ching/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/bykeggs/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
-    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">☀️</button>
-    <script src="js/blog-data.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>about</h2>
+      <p>Hi! I'm Kalie Ching (she/her), a research engineer at the <a href="https://rai-inst.com/">Robotics and AI Institute (RAI)</a> working on conditioning for robot policy learning. I previously built 3D perception systems for robots that learn skills from human videos.</p>
+      <p>I graduated from UC Berkeley with a major in computer science and a minor in data science. I taught <a href="https://eecs16b.org/staff.html">EECS 16B</a> as a Lab TA for four semesters, and have interned at <a href="https://www.gm.com/innovation/autonomous-driving/">Cruise (now GM)</a>, Microsoft Azure, and <a href="https://www.nasa.gov/astrobee">NASA's Astrobee Facility Project</a>.</p>
+      <p>Outside of work: tennis, winter sports, gym, and character & fashion design.</p>
+    </section>
+
+    <section id="projects">
+      <h2>projects</h2>
+      <div class="project-list">
+
+        <div class="project">
+          <div class="project-header">
+            <span class="project-title">GenForce</span>
+            <a href="https://github.com/kalieching/genforce" class="project-link">GitHub ↗</a>
+          </div>
+          <p>Force-augmented robotics dataset generation system. Produces contact forces and actuator torques alongside standard proprioception for training manipulation policies, stored in an RLDS-compatible TFRecord pipeline.</p>
+          <div class="project-tags">
+            <span>MuJoCo</span><span>JAX</span><span>Flax</span><span>TFRecord</span>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>contact</h2>
+      <p>kaliefaith (at) gmail.com</p>
+    </section>
+  </main>
+</div>
