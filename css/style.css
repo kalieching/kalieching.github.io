@@ -224,10 +224,14 @@ section p a:hover {
   align-items: stretch;
 }
 
+.project-image-wrap {
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
 .project-image {
   height: 100%;
   width: auto;
-  flex-shrink: 0;
   border-radius: 6px;
   border: 1px solid var(--border);
 }
