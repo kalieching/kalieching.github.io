@@ -221,12 +221,12 @@ section p a:hover {
 .project-body {
   display: flex;
   gap: 1.25rem;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .project-image-wrap {
   flex-shrink: 0;
-  align-self: stretch;
+  height: 120px;
 }
 
 .project-image {
