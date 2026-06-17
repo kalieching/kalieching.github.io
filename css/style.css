@@ -225,11 +225,11 @@ section p a:hover {
 }
 
 .project-image {
-  width: 160px;
+  height: 100%;
+  width: auto;
   flex-shrink: 0;
   border-radius: 6px;
   border: 1px solid var(--border);
-  object-fit: cover;
 }
 
 .project-details {
