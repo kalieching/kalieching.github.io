@@ -1,3 +1,23 @@
+// Keep every project available without JavaScript; default to selected work when enhanced.
+const workToggle = document.querySelector('[data-work-toggle]');
+const workTitle = document.querySelector('#work-title');
+const otherWork = [...document.querySelectorAll('[data-other-work]')];
+if (workToggle && workTitle) {
+  const showWork = (showAll) => {
+    otherWork.forEach((project) => { project.hidden = !showAll; });
+    workTitle.textContent = showAll ? 'All work' : 'Selected work';
+    workToggle.textContent = showAll ? 'Show selected work' : 'Show all work';
+    workToggle.setAttribute('aria-expanded', String(showAll));
+  };
+  const linksToOtherWork = () => otherWork.some((project) => location.hash === `#${project.id}`);
+  showWork(linksToOtherWork());
+  workToggle.hidden = false;
+  workToggle.addEventListener('click', () => showWork(workToggle.getAttribute('aria-expanded') !== 'true'));
+  window.addEventListener('hashchange', () => {
+    if (linksToOtherWork()) showWork(true);
+  });
+}
+
 const traceDialog = document.querySelector('#trace-dialog');
 const traceLinks = document.querySelectorAll('[data-open-trace]');
 if (traceDialog && typeof traceDialog.showModal === 'function') {
@@ -12,6 +32,20 @@ if (traceDialog && typeof traceDialog.showModal === 'function') {
     if (event.target === traceDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) traceDialog.close();
   });
 }
+
+// Load animated project previews only when a visitor chooses to play them.
+document.querySelectorAll('[data-preview-toggle]').forEach((button) => {
+  const preview = document.getElementById(button.getAttribute('aria-controls'));
+  if (!preview || !preview.dataset.previewSrc) return;
+  const poster = preview.getAttribute('src');
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    const playing = button.dataset.playing === 'true';
+    preview.src = playing ? poster : preview.dataset.previewSrc;
+    button.dataset.playing = String(!playing);
+    button.setAttribute('aria-label', `${playing ? 'Play' : 'Stop'} ${button.dataset.previewName} preview`);
+  });
+});
 
 // Fade the scroll cue as the introduction leaves the viewport.
 const scrollCue = document.querySelector('.scroll-cue');
@@ -35,7 +69,7 @@ if (scrollCue && aboutSection) {
   updateCue();
 }
 
-// Dim the stars themselves so the blue sky remains unchanged behind the text.
+// Soften nearby stars while preserving the sky behind the text.
 const introContent = document.querySelector('.intro-content');
 const stars = [...document.querySelectorAll('.star-field span')];
 if (introContent && stars.length) {

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".003 .15" numOctaves="3" seed="18" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+  <path fill="#eeeae1" d="M0 0h1000v600H0z"/>
+  <path filter="url(#grain)" opacity=".12" d="M0 0h1000v600H0z"/>
+  <g fill="none" stroke="#aaa28d" opacity=".14" stroke-width=".8">
+    <path d="M0 97Q210 90 420 98T1000 95M0 106Q280 94 480 109T1000 104M0 290Q180 310 340 293T700 295T1000 290M0 304Q190 323 345 307T710 308T1000 304M0 470Q240 459 430 478T1000 471M0 481Q260 472 460 489T1000 483"/>
+    <ellipse cx="735" cy="294" rx="100" ry="6"/><ellipse cx="735" cy="294" rx="70" ry="3"/>
+  </g>
+  <path d="M0 1H1000M0 599H1000" stroke="#8b8270" opacity=".09"/>
+</svg>
