@@ -75,7 +75,7 @@ html.media-page { --text:#3f463e; --muted:#777c70; --accent:#526b5d; --line:#b8b
 .book-paper .scrap-face::after { background:linear-gradient(90deg,#211c2440,transparent 5%,#fff5d930 8%,transparent 13%); box-shadow:inset -2px 0 5px #fff5d980; }
 .book-cover { display:block; width:100%; height:auto; border-radius:3px 6px 3px 2px; }
 /* A ribbon bookmark tucked behind the cover, hanging from the bottom with a notched end. */
-.bookmark { position:absolute; z-index:-1; bottom:-104px; right:30px; width:30px; height:170px; display:flex; justify-content:flex-end; align-items:center; padding-bottom:20px; writing-mode:vertical-rl; background:linear-gradient(90deg,#6e1420,#9c2232 45%,#b0303f 55%,#7d1826); color:#f6e6d6; font:500 14px/1 var(--hand); clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 14px),0 100%); pointer-events:none; }
+.bookmark { position:absolute; z-index:-1; bottom:-134px; right:30px; width:30px; height:200px; display:flex; justify-content:flex-end; align-items:center; padding-bottom:22px; writing-mode:vertical-rl; background:linear-gradient(90deg,#6e1420,#9c2232 45%,#b0303f 55%,#7d1826); color:#fbecd9; font:normal 9px/1 Georgia,serif; letter-spacing:.13em; text-transform:uppercase; text-shadow:0 1px 1px #3a0a10; clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 14px),0 100%); pointer-events:none; }
 .book-paper h3,.book-paper .book-author { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
 .book-paper blockquote { margin:14px 16px 4px; font:normal 15px/1.55 Georgia,serif; }
 .is-interactive .book-paper blockquote { display:none; }
