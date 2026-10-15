@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#eeeae1">
   <meta name="description" content="Kalie Ching’s collection of favorite reading, films, and music.">
   <title>Media — Kalie Ching</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/portfolio.css">
   <link rel="stylesheet" href="css/scrapbook.css">
   <script src="assets/portfolio.js" defer></script>
@@ -22,36 +23,23 @@
         <a href="media.html" aria-current="page">media</a>
       </nav>
     </header>
-    <main id="main" class="media-main scrapbook-main">
+    <main id="main" class="scrapbook-main">
       <header class="scrapbook-heading">
         <h2 class="sr-only">Media collection</h2>
-        <div class="scrapbook-tools" hidden>
-          <button class="reset-scrapbook" type="button" data-reset-scrapbook aria-label="Reset arrangement" title="Reset arrangement"><span aria-hidden="true">↺</span></button>
-        </div>
+        <button class="reset-scrapbook" type="button" data-reset-scrapbook aria-label="Reset arrangement" title="Reset arrangement" hidden><span aria-hidden="true">↺</span></button>
       </header>
-      <p class="sr-only" id="scrapbook-keyboard-help">Use a piece’s Move button and the arrow keys to rearrange it. Hold Shift for larger steps. Press Escape during a drag to cancel. Use the Open button to view a piece.</p>
+      <p class="sr-only" id="scrapbook-keyboard-help">Use a piece’s Move button and the arrow keys to rearrange it. Hold Shift for larger steps. Press Escape during a drag to cancel. Use a piece’s Open button to view it; press Enter on a tape to insert it into the VHS player.</p>
       <div class="desk-layout">
       <section class="scrapbook-board" aria-label="Scrapbook of favorite reading, films, and music">
-        <article class="scrap poem-paper" data-piece="summer-day" data-excerpt data-tilt="-4" data-width=".89" data-creator="Mary Oliver" data-kind="Poem" style="--tilt:-4deg">
+        <article class="scrap" data-piece="summer-day" data-excerpt data-tilt="-4" data-width=".89" data-creator="Mary Oliver" data-kind="Poem" style="--tilt:-4deg">
           <div class="scrap-face">
             <h3>The Summer Day</h3>
-            <blockquote>Doesn't everything die at last, and too soon?<br>
+            <blockquote>Tell me, what else should I have done?<br>
+              Doesn't everything die at last, and too soon?<br>
               Tell me, what is it you plan to do<br>
               with your one wild and precious life?</blockquote>
             <p class="paper-signature">—Mary Oliver</p>
             <a class="scrap-source" href="https://www.loc.gov/programs/poetry-and-literature/poet-laureate/poet-laureate-projects/poetry-180/all-poems/item/poetry-180-133/the-summer-day/">Read the poem ↗</a>
-          </div>
-        </article>
-        <article class="scrap photo-print wide-print" data-piece="arrival" data-tilt="3" data-width="1" data-creator="Denis Villeneuve · 2016" data-kind="Film" data-credit="Still via Cineteca Madrid · © Paramount Pictures" data-credit-url="https://www.cinetecamadrid.com/programacion/la-llegada" style="--tilt:3deg">
-          <div class="scrap-face">
-            <div class="photo-window"><img src="assets/media/arrival.webp" width="1100" height="461" alt="Louise raises her hand to the glass opposite a heptapod in Arrival." decoding="async"></div>
-            <div class="photo-caption"><h3>Arrival</h3><span class="photo-year">2016</span></div>
-          </div>
-        </article>
-        <article class="scrap photo-print instant-print" data-piece="edgerunners" data-tilt="-5" data-width=".94" data-creator="Studio Trigger · 2022" data-kind="Series" data-credit="Still: Cyberpunk: Edgerunners · Studio Trigger / CD PROJEKT RED / Netflix" data-credit-url="https://www.netflix.com/title/81054853" style="--tilt:-5deg">
-          <div class="scrap-face">
-            <div class="photo-window"><img src="assets/media/edgerunners.webp" width="1100" height="619" alt="David and Lucy sit together on the moon, looking at Earth, in Cyberpunk: Edgerunners." decoding="async"></div>
-            <h3>Cyberpunk: Edgerunners</h3>
           </div>
         </article>
         <article class="scrap tape-piece" data-piece="mr-lawrence" data-tilt="3" data-width=".93" data-creator="Ryuichi Sakamoto" data-kind="Music" style="--tape-color:#b8bea6;--tilt:3deg">
@@ -60,63 +48,87 @@
             <a class="scrap-source" href="https://youtu.be/1OZDaRhHHyM">Listen on YouTube ↗</a>
           </div>
         </article>
-        <article class="scrap photo-print ghibli-print" data-piece="nausicaa" data-tilt="-2.5" data-width="1" data-creator="Hayao Miyazaki · 1984" data-kind="Film" data-credit="© 1984 Hayao Miyazaki/Studio Ghibli, H" data-credit-url="https://www.ghibli.jp/works/nausicaa/" style="--tilt:-2.5deg">
+        <article class="scrap book-paper" data-piece="persepolis" data-tilt="2.5" data-width=".86" data-creator="Marjane Satrapi" data-kind="Book" data-note="currently reading" style="--tilt:2.5deg">
+          <div class="scrap-face">
+            <img class="book-cover" src="assets/media/persepolis.webp" width="304" height="450" alt="The black and teal cover of The Complete Persepolis by Marjane Satrapi, showing her family in a thought bubble." loading="lazy" decoding="async">
+            <span class="bookmark">Oct. book club</span>
+            <h3>The Complete Persepolis</h3>
+            <p class="book-author">Marjane Satrapi</p>
+            <blockquote>“I realized then that I didn’t understand anything. I read all the books I could. I’d never read as much as I did during that period.”</blockquote>
+            <a class="scrap-source" href="https://www.goodreads.com/en/book/show/991197.The_Complete_Persepolis">Goodreads ↗</a>
+          </div>
+        </article>
+        <article class="scrap tape-piece" data-piece="shelter" data-tilt="-2" data-width=".97" data-creator="Porter Robinson &amp; Madeon" data-kind="Music" style="--tape-color:#bd9ca0;--tilt:-2deg">
+          <div class="scrap-face">
+            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 03</span><h3>Shelter</h3><p>Porter Robinson &amp; Madeon</p></div></div>
+            <a class="scrap-source" href="https://www.youtube.com/watch?v=fzQ6gRAEoy0">Listen on YouTube ↗</a>
+          </div>
+        </article>
+        <article class="scrap photo-print" data-piece="prestige" data-tilt="-3" data-width="1" data-creator="Christopher Nolan · 2006" data-kind="Film" data-credit="Still: Hugh Jackman in The Prestige · TCD/Prod.DB / Alamy Stock Photo, via The Conversation" data-credit-url="https://theconversation.com/the-prestige-the-real-life-warring-victorian-magicians-who-inspired-the-film-165707" style="--tilt:-3deg">
+          <div class="scrap-face">
+            <div class="photo-window"><img src="assets/media/prestige.webp" width="1100" height="733" alt="Hugh Jackman stands on stage with his arms outstretched and a cane raised, facing a packed theater beneath a bright spotlight, in The Prestige." loading="lazy" decoding="async"></div>
+            <div class="photo-caption"><h3>The Prestige</h3><span class="photo-year">2006</span></div>
+          </div>
+        </article>
+        <article class="scrap photo-print instant-print" data-piece="edgerunners" data-tilt="-5" data-width=".94" data-creator="Studio Trigger · 2022" data-kind="Series" data-credit="Still: Cyberpunk: Edgerunners · Studio Trigger / CD PROJEKT RED / Netflix" data-credit-url="https://www.netflix.com/title/81054853" style="--tilt:-5deg">
+          <div class="scrap-face">
+            <div class="photo-window"><img src="assets/media/edgerunners.webp" width="1100" height="619" alt="David and Lucy sit together on the moon, looking at Earth, in Cyberpunk: Edgerunners." decoding="async"></div>
+            <h3>Cyberpunk: Edgerunners</h3>
+          </div>
+        </article>
+        <article class="scrap photo-print" data-piece="nausicaa" data-tilt="-2.5" data-width="1" data-creator="Hayao Miyazaki · 1984" data-kind="Film" data-credit="© 1984 Hayao Miyazaki/Studio Ghibli, H" data-credit-url="https://www.ghibli.jp/works/nausicaa/" style="--tilt:-2.5deg">
           <div class="scrap-face">
             <div class="photo-window"><img src="assets/media/nausicaa.webp" width="1100" height="595" alt="Nausicaä smiles with Teto on her shoulder beneath a blue sky." loading="lazy" decoding="async"></div>
             <h3>Nausicaä <small>of the Valley of the Wind</small></h3>
+          </div>
+        </article>
+        <article class="scrap tape-piece" data-piece="white-teeth" data-tilt="-3" data-width=".9" data-creator="Ryan Beatty" data-kind="Music" style="--tape-color:#c4bf8e;--tilt:-3deg">
+          <div class="scrap-face">
+            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 04</span><h3>White Teeth</h3><p>Ryan Beatty</p></div></div>
+            <a class="scrap-source" href="https://www.youtube.com/watch?v=0tWMWkrZrTI">Listen on YouTube ↗</a>
+          </div>
+        </article>
+        <article class="scrap photo-print" data-piece="arrival" data-tilt="3" data-width="1" data-creator="Denis Villeneuve · 2016" data-kind="Film" data-credit="Still via Cineteca Madrid · © Paramount Pictures" data-credit-url="https://www.cinetecamadrid.com/programacion/la-llegada" style="--tilt:3deg">
+          <div class="scrap-face">
+            <div class="photo-window"><img src="assets/media/arrival.webp" width="1100" height="461" alt="Louise raises her hand to the glass opposite a heptapod in Arrival." decoding="async"></div>
+            <div class="photo-caption"><h3>Arrival</h3><span class="photo-year">2016</span></div>
+          </div>
+        </article>
+        <article class="scrap book-paper" data-piece="morrie" data-tilt="-3" data-width=".86" data-creator="Mitch Albom" data-kind="Book" style="--tilt:-3deg">
+          <div class="scrap-face">
+            <img class="book-cover" src="assets/media/morrie.webp" width="304" height="475" alt="The cream and red cover of Tuesdays with Morrie by Mitch Albom." loading="lazy" decoding="async">
+            <h3>Tuesdays with Morrie</h3>
+            <p class="book-author">Mitch Albom</p>
+            <blockquote>“The most important thing in life is to learn how to give out love, and to let it come in.”</blockquote>
+            <a class="scrap-source" href="https://www.goodreads.com/en/book/show/6900.Tuesdays_with_Morrie">Goodreads ↗</a>
+          </div>
+        </article>
+        <article class="scrap tape-piece" data-piece="atmosphere" data-tilt="3.5" data-width=".92" data-creator="John Mayer" data-kind="Music" style="--tape-color:#a3b8ae;--tilt:3.5deg">
+          <div class="scrap-face">
+            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 05</span><h3>In Your Atmosphere</h3><p>John Mayer</p></div></div>
+            <a class="scrap-source" href="https://www.youtube.com/watch?v=ZZ4defaop8k">Listen on YouTube ↗</a>
+          </div>
+        </article>
+        <article class="scrap tape-piece" data-piece="oceans" data-tilt="4" data-width=".91" data-creator="NIKI" data-kind="Music" style="--tape-color:#a9b9c1;--tilt:4deg">
+          <div class="scrap-face">
+            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 02</span><h3>Oceans &amp; Engines</h3><p>NIKI</p></div></div>
+            <a class="scrap-source" href="https://www.youtube.com/watch?v=DropwjmHtoo">Listen on YouTube ↗</a>
           </div>
         </article>
         <article class="scrap ruled-paper" data-piece="birthdays" data-excerpt data-tilt="4" data-width=".88" data-creator="Lang Leav" data-kind="Poem" style="--tilt:4deg">
           <div class="scrap-face">
             <h3>Birthdays</h3>
             <blockquote>
-              <p>It is a ceremony, the blowing of candles, the cutting of a cake—the mess of cream and sponge in your mouth. The taste is sweet and familiar, like a newly formed wish, fashioned from all the ones you’ve made before.</p>
+              <p>Then there was that year you fell in love. The one where there weren’t any candles—just you walking late at night through the city streets with your heart in pieces, wanting to give yourself to the first stranger who called you beautiful.</p>
+              <p>Since then it’s been the same every year. As soon as the first match is struck, the smell of burning takes you backwards through your memory. It stops you right at that moment on that warm, September night, as you watched the first trickle of melting wax hit the icing, and you couldn’t think of a single damn thing you wanted—because he was standing there, in the flickering light, asking you to make a wish.</p>
             </blockquote>
             <p class="paper-signature">—Lang Leav</p>
             <a class="scrap-source" href="https://www.simonandschuster.com.au/authors/Lang-Leav/439921875">More by Lang Leav ↗</a>
           </div>
         </article>
-        <article class="scrap book-paper" data-piece="morrie" data-tilt="-3" data-width=".86" data-creator="Mitch Albom" data-kind="Book" data-credit="Cover via Goodreads" data-credit-url="https://www.goodreads.com/en/book/show/6900.Tuesdays_with_Morrie" style="--tilt:-3deg">
-          <div class="scrap-face">
-            <img class="book-cover" src="assets/media/morrie.webp" width="304" height="475" alt="The cream and red cover of Tuesdays with Morrie by Mitch Albom." loading="lazy" decoding="async">
-            <h3>Tuesdays with Morrie</h3>
-            <p class="book-author">Mitch Albom</p>
-            <a class="scrap-source" href="https://www.goodreads.com/en/book/show/6900.Tuesdays_with_Morrie">Find the book ↗</a>
-          </div>
-        </article>
-        <article class="scrap tape-piece" data-piece="oceans" data-tilt="4" data-width=".91" data-creator="NIKI" data-kind="Music" data-credit="Official music video thumbnail · NIKI / YouTube" data-credit-url="https://www.youtube.com/watch?v=DropwjmHtoo" style="--tape-color:#a9b9c1;--tilt:4deg">
-          <div class="scrap-face">
-            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 02</span><h3>Oceans &amp; Engines</h3><p>NIKI</p></div></div>
-            <a class="scrap-source" href="https://www.youtube.com/watch?v=DropwjmHtoo">Listen on YouTube ↗</a>
-          </div>
-        </article>
-        <article class="scrap photo-print prestige-print" data-piece="prestige" data-tilt="-3" data-width="1" data-creator="Christopher Nolan · 2006" data-kind="Film" data-credit="Still via La Cinémathèque française · The Prestige" data-credit-url="https://www.cinematheque.fr/film/100558.html" style="--tilt:-3deg">
-          <div class="scrap-face">
-            <div class="photo-window"><img src="assets/media/prestige.webp" width="910" height="512" alt="Two men stand among a field of glowing light bulbs in The Prestige." loading="lazy" decoding="async"></div>
-            <div class="photo-caption"><h3>The Prestige</h3><span class="photo-year">2006</span></div>
-          </div>
-        </article>
-        <article class="scrap tape-piece" data-piece="daylight" data-tilt="-4" data-width=".96" data-creator="Max Richter" data-kind="Music" style="--tape-color:#d0b58e;--tilt:-4deg">
-          <div class="scrap-face">
-            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 03</span><h3>On the Nature of Daylight</h3><p>Max Richter</p></div></div>
-            <a class="scrap-source" href="https://youtu.be/rVN1B-tUpgs">Listen on YouTube ↗</a>
-          </div>
-        </article>
-        <article class="scrap tape-piece" data-piece="shelter" data-tilt="-2" data-width=".97" data-creator="Porter Robinson &amp; Madeon" data-kind="Music" data-credit="Official video thumbnail · Porter Robinson / Madeon / A-1 Pictures / Crunchyroll" data-credit-url="https://www.youtube.com/watch?v=fzQ6gRAEoy0" style="--tape-color:#bd9ca0;--tilt:-2deg">
-          <div class="scrap-face">
-            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 04</span><h3>Shelter</h3><p>Porter Robinson &amp; Madeon</p></div></div>
-            <a class="scrap-source" href="https://www.youtube.com/watch?v=fzQ6gRAEoy0">Listen on YouTube ↗</a>
-          </div>
-        </article>
-        <article class="scrap tape-piece" data-piece="sakura" data-tilt="4" data-width=".87" data-creator="AUN J-CLASSIC ORCHESTRA" data-kind="Music" style="--tape-color:#b2bccd;--tilt:4deg">
-          <div class="scrap-face">
-            <div class="vhs-cassette"><div class="tape-window" aria-hidden="true"><i></i><span></span><i></i></div><div class="tape-label"><span class="tape-side">VHS / 05</span><h3>Sakura (II)</h3><p>AUN J-CLASSIC ORCHESTRA</p></div></div>
-            <a class="scrap-source" href="https://www.youtube.com/watch?v=P1O76zV3Ozg">Listen on YouTube ↗</a>
-          </div>
-        </article>
       </section>
       <aside class="listening-corner" aria-label="CRT television and VHS player">
-        <div class="tape-player" id="tape-player">
+        <div class="tape-player">
           <div class="television" aria-label="Drop a VHS tape here" role="region">
             <div class="tv-brand" aria-hidden="true"><span>COLOR / VHS</span></div>
             <div class="crt-bezel">
@@ -134,7 +146,6 @@
           </div>
           <div class="player-caption"><span class="player-state"></span><h3 class="current-tape" hidden></h3><p class="current-artist" hidden></p></div>
           <p class="playback-notice" role="status" hidden></p>
-          <a class="tape-external" hidden target="_blank" rel="noopener">Open on YouTube ↗</a>
           <noscript><p>Follow the listening links on the tapes to hear each song.</p></noscript>
         </div>
       </aside>

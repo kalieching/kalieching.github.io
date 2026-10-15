@@ -4,19 +4,30 @@
   const pieces = [...board.querySelectorAll('.scrap')];
   const dialog = document.querySelector('.scrapbook-dialog');
   const status = document.querySelector('[data-scrapbook-status]');
-  const storageKey = 'kalie-desk-v5';
+  const storageKey = 'kalie-desk-v6';
   const player = document.querySelector('.tape-player');
   const $ = selector => player.querySelector(selector);
   const television = $('.television'), playback = $('.tape-playback'), standby = $('.tv-standby'), notice = $('.playback-notice');
-  const playButton = $('.play-tape'), ejectButton = $('.eject-tape'), external = $('.tape-external');
+  const playButton = $('.play-tape'), ejectButton = $('.eject-tape');
   const currentTape = $('.current-tape'), currentArtist = $('.current-artist'), playerState = $('.player-state');
-  let loadedTape = null, dragFrame = 0, tuningTimer;
-  let saved = {}, columns = 0, width = 0, height = 0, topLayer = 12, active = null;
+  let loadedTape = null, dragFrame = 0;
+  let saved = {}, sizeBucket = 0, width = 0, height = 0, topLayer = 0, active = null;
   try { saved = JSON.parse(localStorage.getItem(storageKey)) || {}; } catch {}
   if (typeof saved !== 'object' || Array.isArray(saved)) saved = {};
   const positions = new Map();
   const clamp = (n, min, max) => Math.max(min, Math.min(Math.max(min, max), n));
   const title = piece => piece.querySelector('h3').textContent.replace(/\s+/g, ' ').trim();
+  // A small seeded generator (FNV-1a hash into mulberry32) keeps the default layout the same on every visit.
+  function seeded(text) {
+    let a = 2166136261;
+    for (const ch of text) a = Math.imul(a ^ ch.charCodeAt(0), 16777619);
+    return () => {
+      a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
   function standbyScreen(message) {
     standby.hidden = false;
     $('.screen-status').textContent = message;
@@ -29,26 +40,26 @@
   function setTape(piece) {
     loadedTape = piece;
     stopPlayback();
-    clearTimeout(tuningTimer);
     notice.hidden = true;
     pieces.forEach(p => p.classList.toggle('is-loaded', p === piece));
     player.classList.toggle('has-tape', !!piece);
+    // The screen flickers for as long as a tape waits on TAPE READY.
     player.classList.toggle('is-tuning', !!piece);
-    if (piece) tuningTimer = setTimeout(() => player.classList.remove('is-tuning'), 450);
     standbyScreen(piece ? 'TAPE READY' : 'NO TAPE');
     $('.slot-label').textContent = piece ? 'CASSETTE LOADED' : 'INSERT CASSETTE';
     playerState.textContent = piece ? 'Tape loaded' : '';
     playButton.disabled = ejectButton.disabled = !piece;
-    external.hidden = currentTape.hidden = currentArtist.hidden = !piece;
+    currentTape.hidden = currentArtist.hidden = !piece;
     currentTape.textContent = piece ? title(piece) : '';
     currentArtist.textContent = piece ? piece.dataset.creator : '';
-    if (piece) external.href = piece.querySelector('.scrap-source').href;
   }
   function loadTape(piece, reveal = false) {
     setTape(piece);
     status.textContent = `${title(piece)} is in the VHS player. Press Play to watch.`;
     if (reveal) {
-      player.scrollIntoView({ behavior:'instant', block:'center' });
+      // Bring the TV into view only when it is off screen (it sits above the desk on narrow layouts).
+      const r = player.getBoundingClientRect();
+      if (r.top < 0 || r.bottom > innerHeight) player.scrollIntoView({ behavior:'instant', block:'center' });
       playButton.focus({ preventScroll:true });
     }
   }
@@ -61,11 +72,10 @@
       return;
     }
     if (location.protocol === 'file:') {
-      notice.textContent = 'YouTube needs a web preview. Open this page through localhost, or use the YouTube link below.';
+      notice.textContent = 'YouTube needs a web preview. Open this page through localhost to play it.';
       notice.hidden = false;
       return;
     }
-    clearTimeout(tuningTimer);
     player.classList.remove('is-tuning');
     const url = new URL(loadedTape.querySelector('.scrap-source').href);
     const videoId = url.hostname === 'youtu.be' ? url.pathname.slice(1) : url.searchParams.get('v');
@@ -99,7 +109,7 @@
     piece.style.setProperty('--top', `${point.y}px`);
   }
   function remember() {
-    saved[columns] = Object.fromEntries(pieces.map(piece => {
+    saved[sizeBucket] = Object.fromEntries(pieces.map(piece => {
       const p = positions.get(piece), b = bounds(piece);
       return [piece.dataset.piece, { x:(p.x - b.x) / Math.max(1, b.maxX - b.x), y:(p.y - b.y) / Math.max(1, b.maxY - b.y), z:Number(piece.style.zIndex) || 1 }];
     }));
@@ -108,33 +118,52 @@
   function layout() {
     const nextWidth = board.clientWidth;
     if (!nextWidth) return;
-    if (columns && positions.size) remember();
+    if (sizeBucket && positions.size) remember();
     width = nextWidth;
     // Responsive size buckets also keep saved desktop and phone positions separate.
-    columns = width >= 800 ? 3 : width >= 540 ? 2 : 1;
-    const anchors = [.03, .46, .94, .25, .73, .02, .43, .98, .17, .65, .04, .9];
-    const offsets = [16, 64, 30, 8, 42, 24, 52, 4, 34, 14, 46, 22];
-    const placed = [];
-    const defaults = new Map();
-    pieces.forEach((piece, i) => {
-      piece.style.width = `${Math.min(250, width - 58) * Number(piece.dataset.width)}px`;
-      const w = piece.offsetWidth, h = piece.offsetHeight;
-      const x = 24 + anchors[i % anchors.length] * Math.max(0, width - w - 48);
-      let y = 28 + offsets[i % offsets.length];
-      // Let edges overlap slightly, while keeping the body of each piece exposed.
-      for (const other of [...placed].sort((a, b) => a.y - b.y)) {
-        const overlap = Math.min(x + w, other.x + other.w) - Math.max(x, other.x);
-        if (overlap > 22 && y < other.y + other.h - 14 && y + h > other.y + 14) {
-          y = other.y + other.h - 10 + offsets[i % offsets.length] / 3;
+    sizeBucket = width >= 800 ? 3 : width >= 540 ? 2 : 1;
+    pieces.forEach(piece => { piece.style.width = `${Math.min(250, width - 58) * Number(piece.dataset.width)}px`; });
+    // scrollHeight includes overhanging details such as a bookmark.
+    const sizes = pieces.map(piece => ({ w:piece.offsetWidth, h:piece.offsetHeight, overhang:Math.max(0, piece.scrollHeight - piece.offsetHeight) }));
+    // Overlap density rises with the collection, so the desk's height grows with the square
+    // root of the piece count instead of linearly: more pieces mean more clutter, not a much longer page.
+    const coverage = (sizeBucket === 1 ? .8 : 1) * Math.sqrt(Math.max(1, pieces.length / 13));
+    const area = sizes.reduce((sum, s) => sum + s.w * s.h, 0);
+    height = Math.max(area / (width * coverage), ...sizes.map(s => s.h + s.overhang)) + 56;
+    // Scatter pieces: each tries seeded spots and keeps the one covering the least of the pieces
+    // beneath it, never leaving one of them less than 40% visible. If a piece finds no such spot,
+    // the desk grows 8% and the scatter reruns, so the desk is only as tall as the collection needs.
+    const grid = 5, minVisible = Math.ceil(.4 * grid * grid);
+    function scatter() {
+      const placed = [], spots = new Map();
+      for (const [i, piece] of pieces.entries()) {
+        const { w, h, overhang } = sizes[i], b = bounds(piece), random = seeded(piece.dataset.piece);
+        const hits = (q, x, y) => q.points.map(([px, py], n) => !q.covered[n] && px >= x && px <= x + w && py >= y && py <= y + h);
+        let best = null, bestScore = Infinity;
+        for (let k = 0; k < 200; k++) {
+          const x = b.x + random() * Math.max(0, b.maxX - b.x), y = b.y + random() * Math.max(0, b.maxY - overhang - b.y);
+          let score = 0;
+          for (const q of placed) {
+            const newly = hits(q, x, y).filter(Boolean).length;
+            if (q.visible - newly < minVisible) { score = Infinity; break; }
+            score += newly;
+          }
+          if (score < bestScore) { best = { x, y }; bestScore = score; }
         }
+        if (!best) return null;
+        for (const q of placed) hits(q, best.x, best.y).forEach((hit, n) => { if (hit) { q.covered[n] = 1; q.visible--; } });
+        const points = [];
+        for (let gx = 0; gx < grid; gx++) for (let gy = 0; gy < grid; gy++) points.push([best.x + w * (gx + .5) / grid, best.y + h * (gy + .5) / grid]);
+        placed.push({ points, covered:new Uint8Array(points.length), visible:points.length });
+        spots.set(piece, best);
       }
-      placed.push({ x, y, w, h });
-      defaults.set(piece, { x, y });
-    });
-    height = Math.max(...placed.map(p => p.y + p.h)) + 55;
+      return spots;
+    }
+    let defaults;
+    for (let attempt = 0; attempt < 30 && !(defaults = scatter()); attempt++) height *= 1.08;
     board.style.height = `${height}px`;
     pieces.forEach((piece, i) => {
-      const stored = saved[columns]?.[piece.dataset.piece], b = bounds(piece), initial = defaults.get(piece);
+      const stored = saved[sizeBucket]?.[piece.dataset.piece], b = bounds(piece), initial = defaults.get(piece);
       if (stored && Number.isFinite(stored.x) && Number.isFinite(stored.y)) {
         move(piece, b.x + clamp(stored.x, 0, 1) * (b.maxX - b.x), b.y + clamp(stored.y, 0, 1) * (b.maxY - b.y));
         piece.style.zIndex = Number.isFinite(stored.z) ? clamp(stored.z, 1, 10000) : i + 1;
@@ -146,19 +175,15 @@
   function open(piece) {
     lift(piece);
     dialog.classList.toggle('unfolded-poem', piece.dataset.kind === 'Poem');
+    dialog.classList.toggle('book-page', piece.classList.contains('book-paper'));
+    dialog.classList.toggle('has-note', 'note' in piece.dataset);
     dialog.querySelector('h2').textContent = title(piece);
-    dialog.querySelector('.detail-kind').textContent = piece.dataset.kind + ('excerpt' in piece.dataset ? ' · excerpt' : '');
+    dialog.querySelector('.detail-kind').textContent = piece.dataset.kind + ('excerpt' in piece.dataset ? ' · excerpt' : '') + (piece.dataset.note ? ` · ${piece.dataset.note}` : '');
     dialog.querySelector('.detail-creator').textContent = piece.dataset.creator;
-    const art = piece.querySelector('.photo-window, .book-cover, blockquote, .vhs-cassette');
+    // A piece's text (poem or quote) takes the place of its image in the detail view.
+    const art = piece.querySelector('blockquote') || piece.querySelector('.photo-window, .book-cover');
     const area = dialog.querySelector('.detail-art');
     area.replaceChildren(...(art ? [art.cloneNode(true)] : []));
-    area.style.setProperty('--tape-color', piece.style.getPropertyValue('--tape-color'));
-    if (piece.classList.contains('tape-piece')) {
-      const load = document.createElement('button');
-      load.type = 'button'; load.className = 'load-tape'; load.textContent = 'Insert into the VHS player ↗';
-      load.addEventListener('click', () => { dialog.close(); loadTape(piece, true); });
-      area.append(load);
-    }
     area.querySelectorAll('img').forEach(img => { img.loading = 'eager'; });
     const original = piece.querySelector('.scrap-source'), source = dialog.querySelector('.detail-source');
     source.hidden = !original;
@@ -175,8 +200,15 @@
   pieces.forEach(piece => {
     const opener = document.createElement('button');
     opener.type = 'button'; opener.className = 'scrap-open';
-    opener.setAttribute('aria-label', `${piece.dataset.kind === 'Poem' ? 'Unfold' : 'Open'} ${title(piece)}`);
-    opener.addEventListener('click', () => { if (!piece._suppressClick) open(piece); });
+    // Tapes have no detail view and load only when dropped on the TV. Keyboard activation
+    // (a click with detail 0) still inserts one, since keyboard users cannot drag.
+    const tape = piece.classList.contains('tape-piece');
+    opener.setAttribute('aria-label', tape ? `Insert ${title(piece)} into the VHS player` : `${piece.dataset.kind === 'Poem' ? 'Unfold' : 'Open'} ${title(piece)}`);
+    opener.addEventListener('click', event => {
+      if (piece._suppressClick) return;
+      if (!tape) open(piece);
+      else if (event.detail === 0) loadTape(piece, true);
+    });
     const grip = document.createElement('button');
     grip.type = 'button'; grip.className = 'scrap-grip'; grip.setAttribute('aria-label', `Move ${title(piece)}`);
     grip.setAttribute('aria-describedby', 'scrapbook-keyboard-help');
@@ -184,7 +216,7 @@
     piece.append(opener, grip);
     piece.addEventListener('dragstart', event => event.preventDefault());
     piece.addEventListener('pointerdown', event => {
-      if (event.button !== 0 || active || event.target.closest('a, .load-tape')) return;
+      if (event.button !== 0 || active || event.target.closest('a')) return;
       if (event.pointerType !== 'mouse' && !event.target.closest('.scrap-grip')) return;
       lift(piece);
       active = { piece, id:event.pointerId, startX:event.clientX, startY:event.clientY, x:event.clientX, y:event.clientY, scrollY:window.scrollY, origin:{ ...positions.get(piece) }, tape:piece.classList.contains('tape-piece'), dragging:false };
@@ -260,15 +292,13 @@
     layout(); status.textContent = 'The original arrangement is restored.';
   });
   dialog.querySelector('.detail-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    const r = dialog.getBoundingClientRect();
-    if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) dialog.close();
-  });
+  // The dialog has no padding, so a click on the dialog element itself is a backdrop click.
+  dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
   async function initialize() {
     await document.fonts.ready;
     board.classList.add('is-interactive');
     layout();
-    document.querySelector('.scrapbook-tools').hidden = false;
+    document.querySelector('[data-reset-scrapbook]').hidden = false;
     let frame;
     new ResizeObserver(() => {
       if (Math.abs(board.clientWidth - width) < 1) return;

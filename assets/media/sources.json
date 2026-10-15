@@ -17,11 +17,12 @@
   },
   {
     "name": "prestige",
-    "source": "https://www.cinematheque.fr/cache/media/01-films/le-prrestige/s%2C910-7487de.jpg",
-    "page": "https://www.cinematheque.fr/film/100558.html",
-    "width": 910,
-    "height": 512,
-    "bytes": 112726
+    "source": "Lead image of the article (supplied by the site owner)",
+    "page": "https://theconversation.com/the-prestige-the-real-life-warring-victorian-magicians-who-inspired-the-film-165707",
+    "width": 1100,
+    "height": 733,
+    "bytes": 43218,
+    "credit": "TCD/Prod.DB / Alamy Stock Photo"
   },
   {
     "name": "morrie",
@@ -38,5 +39,13 @@
     "credit": "© 1984 Hayao Miyazaki/Studio Ghibli, H",
     "width": 1100,
     "height": 595
+  },
+  {
+    "name": "persepolis",
+    "source": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1327876995i/991197.jpg",
+    "page": "https://www.goodreads.com/en/book/show/991197.The_Complete_Persepolis",
+    "width": 304,
+    "height": 450,
+    "bytes": 16816
   }
 ]

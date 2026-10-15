@@ -14,8 +14,7 @@ html.media-page { --text:#3f463e; --muted:#777c70; --accent:#526b5d; --line:#b8b
 .media-page .sidebar h1 a,.media-page .sidebar nav a { color:#626b5d; }
 .media-page .sidebar nav a[aria-current] { color:#263d2e; }
 .scrapbook-main { padding:105px 0 40px; }
-.scrapbook-heading { display:flex; justify-content:flex-end; align-items:center; gap:32px; margin-bottom:12px; }
-.scrapbook-tools { text-align:center; flex-shrink:0; }
+.scrapbook-heading { display:flex; justify-content:flex-end; align-items:center; margin-bottom:12px; }
 .reset-scrapbook { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; padding:0; border:0; border-radius:2px; background:transparent; color:#7a806e; font-family:inherit; font-size:25px; cursor:pointer; }
 .reset-scrapbook:hover { color:#3e5541; }
 .reset-scrapbook:focus-visible { outline:2px solid #597255; outline-offset:2px; }
@@ -35,7 +34,7 @@ html.media-page { --text:#3f463e; --muted:#777c70; --accent:#526b5d; --line:#b8b
 .scrap-source { position:relative; z-index:3; display:inline-flex; align-items:center; min-height:44px; font:10px/1.4 monospace; color:#625c4f; text-decoration:none; }
 .scrap-source:hover { color:#272a22; text-decoration:underline; }
 .scrap-open { position:absolute; inset:0; z-index:2; border:0; background:transparent; cursor:grab; width:100%; border-radius:0; touch-action:pan-y; }
-.scrap-open::after { content:'↗'; position:absolute; bottom:3px; right:6px; color:#615847; font-size:11px; line-height:1; opacity:0; transition:opacity .15s; }
+.scrap-open::after { content:'↗'; position:absolute; bottom:3px; right:6px; color:#615847; font-size:8px; line-height:1; opacity:0; transition:opacity .15s; }
 .scrap:hover .scrap-open::after,.scrap-open:focus-visible::after { opacity:1; }
 .scrap-open:focus-visible { outline:2px solid #597255; outline-offset:6px; }
 .scrap-grip { position:absolute; z-index:4; top:0; right:0; width:44px; height:44px; padding:13px 10px; border:0; background:transparent; color:#5e6454; cursor:grab; touch-action:none; opacity:0; transition:opacity .15s; }
@@ -71,75 +70,78 @@ html.media-page { --text:#3f463e; --muted:#777c70; --accent:#526b5d; --line:#b8b
 .is-interactive .scrap[data-kind="Poem"].is-dragging,.is-interactive .scrap[data-kind="Poem"].is-dragging .scrap-open { cursor:grabbing; }
 
 /* Paperback depth: full cover, curved spine, and exposed page edges. */
-.book-cover { width:58%; margin:0 auto 20px; transform:rotate(3deg); box-shadow:3px 5px 6px #49402f40; }
 .book-paper .scrap-face { padding:0; background:#d8cbb0; border-radius:3px 6px 5px 3px; margin-right:8px; box-shadow:4px 3px 0 #cfc4a9,7px 6px 0 #ddd2bb,9px 9px 1px #a59b85,12px 14px 9px #51473540; }
 .book-paper .scrap-face::before { left:8px; right:auto; width:10px; opacity:1; background:linear-gradient(90deg,#55442d33,#fff8e626,#64513633); }
 .book-paper .scrap-face::after { background:linear-gradient(90deg,#211c2440,transparent 5%,#fff5d930 8%,transparent 13%); box-shadow:inset -2px 0 5px #fff5d980; }
-.book-paper .book-cover { display:block; width:100%; height:auto; margin:0; transform:none; box-shadow:none; border-radius:3px 6px 3px 2px; }
+.book-cover { display:block; width:100%; height:auto; border-radius:3px 6px 3px 2px; }
+/* A ribbon bookmark tucked behind the cover, hanging from the bottom with a notched end. */
+.bookmark { position:absolute; z-index:-1; bottom:-104px; right:30px; width:30px; height:170px; display:flex; justify-content:flex-end; align-items:center; padding-bottom:20px; writing-mode:vertical-rl; background:linear-gradient(90deg,#6e1420,#9c2232 45%,#b0303f 55%,#7d1826); color:#f6e6d6; font:500 14px/1 var(--hand); clip-path:polygon(0 0,100% 0,100% 100%,50% calc(100% - 14px),0 100%); pointer-events:none; }
 .book-paper h3,.book-paper .book-author { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.book-paper blockquote { margin:14px 16px 4px; font:normal 15px/1.55 Georgia,serif; }
+.is-interactive .book-paper blockquote { display:none; }
 .is-interactive .book-paper .scrap-source,.is-interactive .tape-piece > .scrap-face > .scrap-source { display:none; }
 
-/* VHS tapes. Board pieces are smaller than the copy in the dialog. */
+/* VHS tapes: dropping one on the TV inserts it. */
 .tape-piece .scrap-face { padding:0; background:transparent; box-shadow:none; }
 .tape-piece .scrap-face::before,.tape-piece .scrap-face::after { display:none; }
 .tape-piece .scrap-grip { color:#eee7d4; }
-.vhs-cassette { position:relative; background:linear-gradient(135deg,#3b3e39,#222722 70%); padding:18px 20px 15px; border:5px solid #282d28; border-radius:5px; box-shadow:inset 0 0 0 1px #616358,0 5px 0 #191e19,3px 9px 7px #30291e35; }
+.tape-piece .scrap-open::after { display:none; }
+.vhs-cassette { position:relative; background:linear-gradient(135deg,#3b3e39,#222722 70%); padding:12px 12px 6px; border:5px solid #282d28; border-radius:5px; box-shadow:inset 0 0 0 1px #616358,0 5px 0 #191e19,3px 9px 7px #30291e35; }
 .vhs-cassette::before,.vhs-cassette::after { content:''; position:absolute; width:5px; height:5px; border-radius:50%; background:#798071; box-shadow:inset 1px 1px 2px #000; top:5px; }
 .vhs-cassette::before { left:5px; } .vhs-cassette::after { right:5px; }
-.tape-window { height:62px; border:2px solid #171c17; background:linear-gradient(150deg,#737e7080,#111b1690); display:flex; align-items:center; justify-content:space-between; padding:5px 12px; border-radius:4px; box-shadow:inset 0 2px 4px #0006; }
-.tape-window i { height:42px; width:42px; flex-shrink:0; border-radius:50%; background:repeating-conic-gradient(#c0bfa9 0 28deg,#555f4f 28deg 50deg); border:8px solid #34362e; box-shadow:0 0 0 1px #b2b6a2; }
+.tape-window { height:48px; border:2px solid #171c17; background:linear-gradient(150deg,#737e7080,#111b1690); display:flex; align-items:center; justify-content:space-between; padding:4px 7px; border-radius:4px; box-shadow:inset 0 2px 4px #0006; }
+.tape-window i { height:32px; width:32px; flex-shrink:0; border-radius:50%; background:repeating-conic-gradient(#c0bfa9 0 28deg,#555f4f 28deg 50deg); border:6px solid #34362e; box-shadow:0 0 0 1px #b2b6a2; }
 .tape-window span { height:25px; width:26%; background:repeating-linear-gradient(#332b23 0 1px,#44392d 1px 2px); opacity:.8; border:2px solid #1e231d; }
-.tape-label { position:relative; margin-top:12px; padding:10px 12px; background:var(--tape-color,#c5bea6) url('../assets/media/paper-grain.svg'); transform:rotate(-1deg); box-shadow:0 0 1px #eee8d288; min-height:82px; }
+.tape-label { position:relative; margin-top:9px; padding:8px; background:var(--tape-color,#c5bea6) url('../assets/media/paper-grain.svg'); transform:rotate(-1deg); box-shadow:0 0 1px #eee8d288; min-height:72px; }
 .tape-side { display:block; font:8px monospace; letter-spacing:.15em; color:#545a4a; border-bottom:1px solid #73776050; padding-bottom:5px; }
-.tape-label h3 { font:500 26px/1.1 var(--title); color:#30392e; margin:6px 0 10px; letter-spacing:0; }
+.tape-label h3 { font:500 22px/1.1 var(--title); color:#30392e; margin:6px 0 10px; letter-spacing:0; }
 .tape-label p { font:8px/1.4 monospace; margin:0; color:#525c4c; }
 .tape-piece.is-loaded .tape-label { background-color:#cdd3bb; }
-.scrapbook-board .vhs-cassette { padding:12px 12px 6px; }
-.scrapbook-board .tape-window { height:48px; padding:4px 7px; }
-.scrapbook-board .tape-window i { width:32px; height:32px; border-width:6px; }
-.scrapbook-board .tape-label { padding:8px; min-height:72px; margin-top:9px; }
-.scrapbook-board .tape-label h3 { font-size:22px; }
 
 /* CRT television and VHS player. */
 .listening-corner { position:sticky; top:90px; z-index:30; padding-top:32px; }
-.television { position:relative; padding:18px 16px 20px; border:2px solid #b1ad98; border-radius:18px 18px 12px 12px; background:linear-gradient(115deg,#ebe5d2,#d9d2bb 58%,#c6bfa7); box-shadow:inset 3px 3px 3px #fffcdf88,inset -5px -3px 7px #746d5140,0 8px 0 #a19b84,7px 20px 15px #5f594338; transition:box-shadow .2s; }
-.television::before,.television::after { content:''; position:absolute; bottom:-13px; width:45px; height:9px; background:#4b5044; border-radius:0 0 4px 4px; z-index:-1; }
-.television::before { left:25px; } .television::after { right:25px; }
-.television.is-drop-target { box-shadow:0 0 0 3px #d4ad4f,0 0 22px 6px #e8c25e8c,0 8px 0 #a19b84,7px 20px 15px #5f594338; }
+/* Cream plastic over a faint grain, with a seamed lower panel and a soft contact shadow. */
+.television { position:relative; padding:20px 18px 22px; border:1px solid #c9c1a8; border-radius:20px 20px 12px 12px; background:linear-gradient(172deg,rgb(241 236 221 / .88),rgb(214 206 182 / .9)),url('../assets/media/paper-grain.svg') 0 0/260px,#e2dbc6; box-shadow:inset 0 1px 0 #fffaf0,inset 1px 0 0 #fff8ea80,inset 0 -3px 5px #8c846930,0 1px 0 #b9b097,0 2px 0 #a9a086,0 3px 0 #998f75,0 14px 18px -8px #3e382a59,0 32px 40px -22px #3e382a40; transition:box-shadow .2s,filter .2s; }
+.television::before,.television::after { content:''; position:absolute; bottom:-8px; width:38px; height:5px; background:linear-gradient(#5b5e53,#383a33); border-radius:0 0 3px 3px; z-index:-1; }
+.television::before { left:28px; } .television::after { right:28px; }
+/* The glow is a filter so it outlines the whole set, including its base and feet. */
+.television.is-drop-target { box-shadow:inset 0 1px 0 #fffaf0,inset 1px 0 0 #fff8ea80,inset 0 -3px 5px #8c846930,0 1px 0 #b9b097,0 2px 0 #a9a086,0 3px 0 #998f75; filter:drop-shadow(0 0 1px #d4ad4f) drop-shadow(0 0 1px #d4ad4f) drop-shadow(0 0 1.5px #d4ad4f) drop-shadow(0 0 16px #e8c25ecc); }
 .television.is-drop-target .vhs-slot { outline:2px solid #e3be5c; outline-offset:2px; }
-.tv-brand { display:flex; justify-content:flex-end; font:9px monospace; letter-spacing:.16em; color:#646954; margin:0 4px 14px; }
-.tv-brand span { font-size:7px; letter-spacing:.08em; }
-.crt-bezel { border:8px solid #3d433b; border-radius:22px; background:#1b241e; box-shadow:0 1px 0 #f8f1d699,inset 0 0 6px #000; padding:3px; }
-.crt-screen { position:relative; min-height:210px; aspect-ratio:4/3; background:#182a28; border-radius:12px; overflow:hidden; }
+.tv-brand { display:flex; justify-content:flex-end; font:500 7px/1 ui-monospace,"SF Mono",Menlo,monospace; letter-spacing:.24em; color:#8a836f; text-shadow:0 1px 0 #fffaf0; margin:0 4px 12px; }
+/* A recessed bezel around curved glass; the sheen and vignette sit over the standby screen. */
+.crt-bezel { padding:10px; border-radius:20px; background:linear-gradient(160deg,#30352f,#1a1e1a 60%,#262a25); box-shadow:inset 0 2px 4px #000a,inset 0 -1px 0 #ffffff14,0 1px 0 #fffaf0,0 -1px 0 #a39b8366; }
+.crt-screen { position:relative; aspect-ratio:4/3; background:#142420; border-radius:22px / 28px; overflow:hidden; box-shadow:0 0 0 1px #0009; }
+.crt-screen::after { content:''; position:absolute; inset:0; z-index:2; pointer-events:none; border-radius:inherit; background:radial-gradient(120% 90% at 28% 12%,#ffffff21,transparent 42%),radial-gradient(ellipse at 50% 50%,transparent 52%,#00000080 100%); box-shadow:inset 0 0 22px #000b; }
 .crt-screen:has(.tape-playback:not([hidden])) { border-radius:0; }
-.tv-standby { position:absolute; inset:0; background:radial-gradient(ellipse at 45% 40%,#334b46,#101e1c); color:#9cc3af; font:10px monospace; padding:15px; }
-.tv-standby::before { content:''; pointer-events:none; position:absolute; inset:0; background:repeating-linear-gradient(transparent 0 2px,#071a1835 2px 3px); }
-.tv-standby::after { content:''; position:absolute; inset:0; pointer-events:none; border-radius:12px; background:linear-gradient(145deg,#f5ffdc13,transparent 45%); box-shadow:inset 0 0 25px #0007; }
+.crt-screen:has(.tape-playback:not([hidden]))::after { display:none; }
+.tv-standby { position:absolute; inset:0; background:radial-gradient(ellipse at 48% 42%,#2e4c45,#0d1916 75%); color:#acdec6; font:10px ui-monospace,"SF Mono",Menlo,monospace; text-shadow:0 0 4px #7fe0b380,0 0 12px #5fd0a038; padding:15px; }
+.tv-standby::before { content:''; pointer-events:none; position:absolute; inset:0; background:repeating-linear-gradient(transparent 0 2px,#04110e40 2px 3px); }
 .tv-channel,.tv-format { position:absolute; z-index:1; letter-spacing:.12em; }
 .tv-channel { top:15px; left:16px; } .tv-format { bottom:14px; right:15px; font-size:8px; }
 .standby-message { height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; }
 .screen-status { font-size:12px; font-weight:normal; letter-spacing:.17em; }
-.is-tuning .tv-standby { background:repeating-linear-gradient(0deg,#435d5160 0 2px,#78918370 2px 3px,#24362d 3px 5px); animation:tune-in .14s steps(2) 3; }
+.is-tuning .tv-standby { background:repeating-linear-gradient(0deg,#435d5160 0 2px,#78918370 2px 3px,#24362d 3px 5px); animation:tune-in .14s steps(2) infinite; }
 @keyframes tune-in { to { opacity:.7; background-position:0 11px; } }
 .tape-playback { position:absolute; inset:0; }
 .tape-playback iframe { display:block; width:100%; height:100%; border:0; background:#000; }
-.tv-lower { position:relative; padding-top:18px; display:grid; grid-template-columns:minmax(0,1fr) 65px; column-gap:18px; }
-.vhs-slot { position:relative; height:28px; background:linear-gradient(#333d33,#4a5143); border:3px solid #aaa58d; box-shadow:inset 0 3px 4px #0008,0 1px 0 #f5edcf; display:flex; align-items:center; justify-content:center; }
-.slot-label { font:7px monospace; color:#a5b29b; letter-spacing:.08em; }
+.tv-lower { position:relative; margin-top:16px; padding-top:16px; border-top:1px solid #cfc7af; box-shadow:inset 0 1px 0 #faf5e8; display:grid; grid-template-columns:minmax(0,1fr) 65px; column-gap:18px; }
+.vhs-slot { position:relative; height:26px; background:linear-gradient(#232822,#3a4036); border-radius:3px; box-shadow:inset 0 2px 3px #000b,0 1px 0 #fffaf0,0 -1px 0 #b3ab9180; display:flex; align-items:center; justify-content:center; }
+.slot-label { font:6.5px ui-monospace,"SF Mono",Menlo,monospace; color:#9aa892; letter-spacing:.2em; }
 .slot-light { position:absolute; right:5px; bottom:4px; width:3px; height:3px; background:#647b6c; }
 .has-tape .slot-light { background:#8cd5b8; box-shadow:0 0 5px #73dfb7; }
-.speaker-grille { grid-column:2; grid-row:1 / 3; background:repeating-linear-gradient(0deg,#747867 0 2px,transparent 2px 5px); border-radius:4px; opacity:.7; min-height:70px; }
+.speaker-grille { grid-column:2; grid-row:1 / 3; background:radial-gradient(circle,#5c5e52 1.1px,transparent 1.7px) 1px 1px/6px 6px; border-radius:6px; box-shadow:inset 0 1px 2px #0000001a; opacity:.85; min-height:70px; }
 .tv-controls { display:flex; align-items:center; gap:6px; margin-top:10px; }
-.tv-controls button { font:9px monospace; color:#3e4b3c; background:linear-gradient(#dedac7,#bbb8a3); border:1px solid #9fa38c; border-radius:3px; box-shadow:0 2px 0 #888d78; min-height:44px; padding:8px 10px; cursor:pointer; }
+.tv-controls button { font:500 8px ui-monospace,"SF Mono",Menlo,monospace; letter-spacing:.14em; text-transform:uppercase; color:#4d5547; background:linear-gradient(#f4efe2,#d8d1bc); border:0; border-radius:4px; box-shadow:inset 0 1px 0 #fffaf0,0 0 0 1px #b8b097,0 2px 0 #aea68c,0 3px 4px #5a523d26; min-height:44px; padding:8px 12px; cursor:pointer; }
+.tv-controls button:active:not(:disabled) { transform:translateY(1px); box-shadow:inset 0 1px 0 #fffaf0,0 0 0 1px #b8b097,0 1px 0 #aea68c; }
 .tv-controls button:disabled { opacity:.45; cursor:default; }
 .tv-controls button:focus-visible { outline:2px solid #337461; outline-offset:3px; }
-.tv-power { width:5px; height:5px; border-radius:50%; background:#8dbbaa; box-shadow:0 0 5px #78bcac; margin-left:5px; }
-.tv-sticker { justify-self:end; grid-column:1 / 3; width:72px; height:24px; background:#c7bc59; margin:16px 3px -2px; transform:rotate(-7deg); box-shadow:1px 1px 2px #64613d30; }
+.tv-power { width:5px; height:5px; border-radius:50%; background:radial-gradient(circle at 35% 35%,#c9f6df,#5fae8a); box-shadow:0 0 6px #6fd6a6aa; margin-left:6px; }
+/* A faded paper sticker, slightly lifted at one corner. */
+.tv-sticker { justify-self:end; grid-column:1 / 3; width:72px; height:24px; background:linear-gradient(160deg,#dccf88d9,#c8ba68e0),url('../assets/media/paper-grain.svg') 0 0/120px; border-radius:1px; clip-path:polygon(0 0,100% 0,100% 72%,93% 100%,0 100%); margin:16px 3px -2px; transform:rotate(-5deg); box-shadow:0 1px 2px #5c573a40; }
 .player-caption { padding:30px 10px 0; text-align:center; }
 .player-state { font:8px monospace; letter-spacing:.1em; text-transform:uppercase; color:#777e68; }
 .current-tape { font:500 27px/1.05 var(--title); color:#505c46; margin:8px 0; }
 .current-artist { font:10px/1.5 monospace; color:#7a7e6c; margin:0; }
-.tape-external { display:block; color:#5e7152; font:10px monospace; margin:12px 0; text-align:center; text-decoration:underline; }
 .playback-notice { font:11px/1.6 monospace; color:#6c5838; padding:12px; background:#e2dbc4; }
 
 /* Detail dialog. */
@@ -156,19 +158,31 @@ html.media-page { --text:#3f463e; --muted:#777c70; --accent:#526b5d; --line:#b8b
 .scrapbook-dialog .detail-creator { font:500 26px var(--hand); color:#706b58; margin:0 0 25px; }
 .detail-art img { width:100%; max-height:52vh; object-fit:contain; display:block; }
 .detail-art .photo-window { background:transparent; }
-.detail-art .book-cover { width:180px; }
 .detail-art blockquote { font:normal 17px/1.6 Georgia,serif; margin:22px 0; }
-.detail-art > .vhs-cassette { width:min(350px,100%); margin:20px auto; }
-.detail-art .tape-label p { font-size:9px; color:#444b3e; }
-.load-tape { position:relative; z-index:3; display:block; border:0; border-top:1px solid #92907950; background:none; color:#465e47; min-height:44px; padding:8px 0; font:11px monospace; cursor:pointer; width:100%; text-align:left; }
 .detail-source { display:inline-flex; min-height:44px; align-items:center; margin-top:18px; color:#3c5b4c; font-size:13px; text-decoration:underline; text-underline-offset:4px; }
 .scrapbook-dialog .detail-credit { font:10px/1.7 monospace; color:#716c5e; margin:16px 0 0; }
 .detail-credit a { color:inherit; }
+
+/* Books open as a page torn from the spine, with the quote highlighted. Faded lines stand in for the rest of the page. */
+.scrapbook-dialog.book-page { width:min(540px,calc(100% - 32px)); background:transparent; box-shadow:none; overflow:visible; filter:drop-shadow(0 18px 30px #0000004d) drop-shadow(0 2px 3px #0003); }
+.book-page .detail-sheet { position:relative; padding:34px 44px 30px 54px; transform:rotate(-1.2deg); clip-path:polygon(3% 0,100% 0,100% 100%,2.5% 100%,1.2% 97.8%,1.6% 95.7%,2.8% 93.5%,0.4% 91.3%,0.9% 89.1%,0.9% 87.0%,1.2% 84.8%,0.4% 82.6%,2.4% 80.4%,0.4% 78.3%,0.9% 76.1%,2.8% 73.9%,2.8% 71.7%,0.9% 69.6%,2.4% 67.4%,0.9% 65.2%,2.8% 63.0%,0.4% 60.9%,0.9% 58.7%,2.4% 56.5%,0.4% 54.3%,2.8% 52.2%,0.4% 50.0%,2.4% 47.8%,0.4% 45.7%,1.6% 43.5%,3.2% 41.3%,2.8% 39.1%,1.6% 37.0%,0.9% 34.8%,3.2% 32.6%,1.6% 30.4%,0.9% 28.3%,2.4% 26.1%,1.2% 23.9%,0.9% 21.7%,0.9% 19.6%,0.4% 17.4%,2.4% 15.2%,0.6% 13.0%,2.8% 10.9%,1.2% 8.7%,0.6% 6.5%,0.6% 4.3%,1.2% 2.2%); background:linear-gradient(90deg,#8a6a3a2e,transparent 9%),radial-gradient(ellipse at 60% 40%,transparent 55%,#b08a4f33),url('../assets/media/paper-grain.svg'),#f3ead4; background-size:auto,auto,400px,auto; }
+.book-page:not(.has-note) .detail-kind { display:none; }
+.book-page .detail-kind { text-align:center; padding-top:4px; margin-bottom:0; }
+.book-page .detail-close { margin:-10px -18px 0 0; }
+.book-page .detail-close:focus-visible { outline-offset:-2px; }
+.book-page h2 { font:normal 11px/1.4 Georgia,serif; letter-spacing:.24em; text-transform:uppercase; text-align:center; color:#7b7262; margin:6px 0 2px; }
+.book-page .detail-creator { font-size:18px; text-align:center; color:#8b8270; margin:0 0 8px; }
+.book-page .detail-art::before,.book-page .detail-art::after { content:''; display:block; height:104px; background:repeating-linear-gradient(transparent 0 11px,#4a42301c 11px 17px,transparent 17px 30px); }
+.book-page .detail-art::before { margin:18px 0 6px; -webkit-mask-image:linear-gradient(transparent,#000 70%); mask-image:linear-gradient(transparent,#000 70%); }
+.book-page .detail-art::after { margin:10px 0 0; -webkit-mask-image:linear-gradient(#000 30%,transparent); mask-image:linear-gradient(#000 30%,transparent); }
+.book-page .detail-art blockquote { display:inline; margin:0; font:normal 19px/1.75 Georgia,serif; color:#2c2920; padding:.05em .2em; -webkit-box-decoration-break:clone; box-decoration-break:clone; background:linear-gradient(100deg,transparent .15em,#f7d94ccc .3em,#f5d343b8 calc(100% - .3em),transparent calc(100% - .1em)) 0 62%/100% 72% no-repeat; }
+.book-page .detail-source { display:flex; justify-content:center; margin-top:14px; }
+@media (max-width:620px) { .book-page .detail-sheet { padding:26px 24px 22px 34px; } .book-page .detail-art blockquote { font-size:17px; } }
 
 @media (pointer:coarse) { .scrap-open { cursor:pointer; } .scrap-grip { opacity:.7; } }
 /* On wide layouts the desk starts beside the reset control; the TV keeps its own spacing. */
 @media (min-width:761px) { .scrapbook-board { margin-top:-70px; } }
 @media (max-width:1050px) { .desk-layout { grid-template-columns:minmax(0,1fr) 320px; gap:18px; } }
 @media (max-width:760px) { .media-page .page { width:calc(100% - 40px); } .media-page .sidebar { padding-inline:20px; } .desk-layout { display:flex; flex-direction:column; gap:12px; } .listening-corner { order:-1; position:relative; top:auto; width:min(340px,100%); align-self:center; padding:20px 0; } .scrapbook-board { width:100%; } }
-@media (max-width:620px) { .scrapbook-tools { display:flex; } .scrapbook-board { gap:65px; padding:35px 25px; } .detail-sheet { padding:22px; } .scrapbook-dialog h2 { font-size:28px; } }
-@media (max-width:360px) { .television { padding-inline:10px; } .crt-bezel { border-width:5px; } .tv-lower { column-gap:10px; grid-template-columns:minmax(0,1fr) 45px; } .vhs-cassette { padding:14px 12px 12px; } .tape-window { padding-inline:6px; } }
+@media (max-width:620px) { .scrapbook-board { gap:65px; padding:35px 25px; } .detail-sheet { padding:22px; } .scrapbook-dialog:not(.book-page) h2 { font-size:28px; } }
+@media (max-width:360px) { .television { padding-inline:10px; } .crt-bezel { padding:7px; } .tv-lower { column-gap:10px; grid-template-columns:minmax(0,1fr) 45px; } }

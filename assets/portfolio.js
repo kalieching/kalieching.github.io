@@ -18,21 +18,6 @@ if (workToggle && workTitle) {
   });
 }
 
-const traceDialog = document.querySelector('#trace-dialog');
-const traceLinks = document.querySelectorAll('[data-open-trace]');
-if (traceDialog && typeof traceDialog.showModal === 'function') {
-  traceLinks.forEach((traceLink) => traceLink.addEventListener('click', (event) => {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    traceDialog.showModal();
-  }));
-  traceDialog.querySelector('[data-close-trace]').addEventListener('click', () => traceDialog.close());
-  traceDialog.addEventListener('click', (event) => {
-    const rect = traceDialog.getBoundingClientRect();
-    if (event.target === traceDialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) traceDialog.close();
-  });
-}
-
 // Load animated project previews only when a visitor chooses to play them.
 document.querySelectorAll('[data-preview-toggle]').forEach((button) => {
   const preview = document.getElementById(button.getAttribute('aria-controls'));
